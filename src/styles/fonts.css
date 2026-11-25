@@ -1,4 +1,11 @@
 @font-face {
+  font-family: "Pixelify Sans";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: optional;
+  src: url("../../assets/fonts/classicpixel.ttf") format("truetype");
+}
+@font-face {
   font-family: "Instrument Serif";
   font-style: normal;
   font-weight: 400;

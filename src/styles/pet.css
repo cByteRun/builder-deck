@@ -28,7 +28,7 @@
   border-radius: 8px 8px 8px 2px;
   background: var(--bg-secondary);
   color: var(--text-secondary);
-  font: 10px/1.25 var(--mono);
+  font: 400 14px/1.2 var(--font-pixel);
 }
 .sensor {
   animation: sensor-pulse 3.6s ease-in-out infinite;
@@ -52,7 +52,7 @@
   right: 0;
   top: 2px;
   color: #e3bfb8;
-  font: 11px var(--pixel);
+  font: 400 13px/1 var(--font-pixel);
 }
 [data-state="idle"] .sprite {
   animation: breathe 3.2s steps(1) infinite;
