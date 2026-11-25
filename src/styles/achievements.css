@@ -64,7 +64,7 @@
   background: var(--bg-secondary);
   border: 1px solid color-mix(in srgb, var(--shade) 48%, var(--border-subtle));
   color: var(--text-primary);
-  font: 10px/1.4 var(--mono);
+  font: 400 14px/1.2 var(--font-pixel);
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
@@ -84,6 +84,7 @@
 .trophy[open] .pet-caption {
   display: block;
   margin-top: 6px;
+  font: 400 14px/1.25 var(--font-pixel);
   color: color-mix(in srgb, var(--shade) 66%, var(--text-primary));
 }
 [data-reaction="ripple"] { --gesture: gill-wave; }
