@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en" data-theme="claude-code">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#191919" />
+    <title>Daniil Tkachev · Builder Deck</title>
+    <meta
+      name="description"
+      content="Daniil Tkachev — Full-Stack Software Engineer in Pavlodar, Kazakhstan. Projects, hackathons and an interactive workspace in three themes."
+    />
+    <link rel="stylesheet" href="./src/styles/fonts.css" />
+    <link rel="stylesheet" href="./src/styles/components.css" />
+    <link rel="stylesheet" href="./src/themes/claude-code/tokens.css" />
+    <link rel="stylesheet" href="./src/themes/claude-code/components.css" />
+    <link rel="stylesheet" href="./src/themes/vibe-v1/tokens.css" />
+    <link rel="stylesheet" href="./src/themes/vibe-v1/components.css" />
+    <link rel="stylesheet" href="./src/themes/vibe-v2/tokens.css" />
+    <link rel="stylesheet" href="./src/themes/vibe-v2/components.css" />
+  </head>
+  <body>
+    <header class="mast">
+      <div class="brand">
+        <span class="logo" data-icon="brand"></span><strong>Builder Deck</strong
+        ><span class="divline"></span
+        ><a
+          class="profile-link"
+          href="https://github.com/cByteRun"
+          target="_blank"
+          rel="noopener"
+          >Daniil Tkachev ↗</a
+        >
+      </div>
+      <div class="user">
+        <span class="clock"
+          ><i class="dot"></i><span id="clock"></span>
+          <span class="tz">ALMT</span></span
+        ><button
+          id="appearance"
+          class="themebtn"
+          aria-label="Theme Admin / Toggle Theme"
+          aria-haspopup="dialog"
+        ></button
+        ><span class="avatar" title="Studio 01">01</span>
+      </div>
+    </header>
+    <main id="main" role="tabpanel" tabindex="-1"></main>
+    <footer>
+      <nav
+        class="dock"
+        role="tablist"
+        aria-label="Studio views"
+        id="dock"
+      ></nav>
+      <div class="status">
+        <div>
+          <span class="status-prompt">❯</span> builder-deck
+          <span class="muted">/</span> <span id="status-mode">hybrid</span>
+        </div>
+        <button
+          class="cat-lane"
+          data-pet="cat"
+          aria-label="Pet Codex the cat"
+        ></button>
+        <div class="online">
+          <i class="dot"></i><span id="state-label">idle</span
+          ><span class="divline"></span><span>LOCAL SESSION</span>
+        </div>
+      </div>
+    </footer>
+    <dialog id="admin" aria-labelledby="admin-title">
+      <h2 id="admin-title">Theme Admin</h2>
+      <button class="closebtn" aria-label="Close Theme Admin" data-admin-close>
+        ×
+      </button>
+      <div class="admin-nav" role="group" aria-label="Admin sections">
+        <button data-admin-tab="themes">Themes</button
+        ><button data-admin-tab="export">Firefox CSS Export &amp; Setup</button>
+      </div>
+      <div id="admin-panel"></div>
+    </dialog>
+    <dialog id="detail">
+      <div id="dialog-inner"></div>
+      <button class="closebtn" aria-label="Close dialog" data-close>×</button>
+    </dialog>
+    <div id="toast" role="status"></div>
+    <div id="particles" aria-hidden="true"></div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

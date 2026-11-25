@@ -1,0 +1,6 @@
+[data-theme="claude-code"] .hero h1 em {
+  color: var(--accent-terracotta);
+}
+[data-theme="claude-code"] .terminal:focus-within {
+  box-shadow: 0 0 0 4px var(--accent-terracotta-soft);
+}

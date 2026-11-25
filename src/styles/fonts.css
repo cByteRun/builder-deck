@@ -1,0 +1,47 @@
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../assets/fonts/instrument-serif.woff") format("woff");
+}
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../assets/fonts/instrument-serif-italic.woff") format("woff");
+}
+@font-face {
+  font-family: "Silkscreen";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../../assets/fonts/silkscreen.woff") format("woff");
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+  src: url("../../assets/fonts/jetbrains-mono.woff") format("woff");
+}
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("../../assets/fonts/inter.woff") format("woff");
+}
+@font-face {
+  font-family: ClassicPixel;
+  src: url("../../assets/fonts/classicpixel.ttf") format("truetype");
+  font-weight: 400 700;
+}
+@font-face {
+  font-family: ClassicPixel;
+  src: url("../../assets/fonts/classicpixel-cyrillic.ttf") format("truetype");
+  font-weight: 400 700;
+  unicode-range: U+041E-041F;
+  size-adjust: 73%;
+}

@@ -1,0 +1,53 @@
+/* Builder Deck · native Firefox Home. Interactive layout ships in newtab.html. */
+@-moz-document url("about:newtab"), url("about:home") {
+  .widget-wrapper:is([data-widget-id="clocks"],[data-widget-id="focusTimer"],[data-widget-id="pictureOfTheDay"],[data-widget-id="crossword"]),
+  .widget-wrapper:has(.focus-timer,.clocks-widget,.crossword,.picture-of-the-day-widget),
+  .focus-timer,.clocks-widget,.crossword.widget,.picture-of-the-day-widget,.ds-section-wrapper,.ds-card-grid-container {
+    display: none !important;
+  }
+  @media not (forced-colors: active) {
+    body {
+      color-scheme: dark !important;
+      --newtab-background-color: #191919 !important;
+      --newtab-background-color-secondary: #232220 !important;
+      --newtab-text-primary-color: #f3f1ec !important;
+      --newtab-text-secondary-color: #9a958e !important;
+      --newtab-primary-action-background: #d97757 !important;
+      color: #f3f1ec !important;
+      background: linear-gradient(#2b2927 1px,transparent 1px),linear-gradient(90deg,#2b2927 1px,transparent 1px),#191919 !important;
+      background-size: 30px 30px !important;
+    }
+    .logo-and-wordmark-wrapper { display: none !important; }
+    .search-wrapper::before {
+      content: "Hello, Daniil.";
+      display: block;
+      grid-column: 1/-1;
+      text-align: center;
+      color: #f3f1ec;
+      font: 400 clamp(36px,6vw,82px)/1.12 Georgia,serif;
+      margin-bottom: 20px;
+      pointer-events: none;
+    }
+    .stuck-search .search-wrapper::before,.fixed-search .search-wrapper::before { display: none; }
+    .search-inner-wrapper,.top-site-outer .tile,.search-handoff-button {
+      background-color: #232220 !important;
+      color: #f3f1ec !important;
+      border: 1px solid #363431 !important;
+      border-radius: 8px !important;
+    }
+    .search-inner-wrapper :is(content-search-handoff-ui,moz-urlbar) {
+      --content-search-handoff-ui-background-color: #232220 !important;
+      --content-search-handoff-ui-color: #f3f1ec !important;
+      --content-search-handoff-ui-caret-color: #d97757 !important;
+      --urlbar-background-color: #232220 !important;
+      --toolbar-field-background-color: #232220 !important;
+      --toolbar-field-color: #f3f1ec !important;
+    }
+    .search-inner-wrapper:focus-within,.top-site-outer:focus-within .tile {
+      outline: 2px solid #d97757 !important;
+      outline-offset: 2px;
+    }
+    .top-site-outer:hover .tile { border-color: #e58869 !important; box-shadow: 0 2px 12px #d9775726 !important; }
+    .top-site-outer .title { color: #f3f1ec !important; }
+  }
+}

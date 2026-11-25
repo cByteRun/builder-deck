@@ -1,0 +1,19 @@
+:root,
+[data-theme="claude-code"] {
+  color-scheme: dark;
+  --bg-primary: #191919;
+  --bg-secondary: #1c1b1a;
+  --bg-card: #232220;
+  --surface-raised: #262523;
+  --text-primary: #f3f1ec;
+  --text-secondary: #9a958e;
+  --faint: #78736c;
+  --border-subtle: #363431;
+  --grid: #2b2927;
+  --accent-terracotta: #d97757;
+  --accent-hover: #e58869;
+  --accent-terracotta-soft: rgba(217, 119, 87, 0.15);
+  --green: #9cb394;
+  --ink: #f3f1ec;
+  --lift: 0 5px 16px #0003;
+}

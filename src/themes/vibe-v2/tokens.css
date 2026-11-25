@@ -1,0 +1,18 @@
+[data-theme="vibe-coding"] {
+  color-scheme: dark;
+  --bg-primary: #09090b;
+  --bg-secondary: #121216;
+  --bg-card: #17171b;
+  --surface-raised: #202024;
+  --text-primary: #f4f4f5;
+  --text-secondary: #b9b3c7;
+  --faint: #928b9b;
+  --border-subtle: #38323e;
+  --grid: #20241c;
+  --accent-terracotta: #ccff00;
+  --accent-hover: #d8ff00;
+  --accent-terracotta-soft: #ccff001a;
+  --green: #00ff66;
+  --ink: #f4f4f5;
+  --lift: 3px 3px 0 #8b5cf6;
+}

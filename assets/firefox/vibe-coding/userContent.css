@@ -1,0 +1,188 @@
+/* Decentrathon 6.0 — local assets, native Firefox Home controls. */
+@-moz-document url("about:newtab"), url("about:home") {
+  @font-face {
+    font-family: "Vibe Pixel";
+    src: url("fonts/PixelifySans.ttf") format("truetype");
+    font-weight: 400 700;
+    font-display: swap;
+  }
+@font-face {
+  font-family: "Vibe Pixel";
+  src: url("fonts/PressStart2P-Regular.ttf") format("truetype");
+  unicode-range: U+041E-041F;
+  size-adjust: 73%;
+  font-weight: 400 700;
+  font-display: swap;
+}
+  /* Hide individual cards, leaving the shared discovery stream and settings usable. */
+  .widgets-container .widget-wrapper[data-widget-id]:not([data-widget-id="clocks"], [data-widget-id="focusTimer"], [data-widget-id="weather"]),
+  .widget-wrapper:has(.crossword, .picture-of-the-day-widget),
+  .crossword.widget, .picture-of-the-day-widget, .widgets-row-ad-cell,
+  .ds-section-wrapper, .ds-card-grid-container, .wrapper-more-recommendations,
+  [data-section-id="topstories"], .ds-highlights, .ds-spoc, .ds-spoc-rectangle {
+    display: none !important;
+  }
+  @media not (forced-colors: active) {
+    :root {
+      --v-ink: #09090b;
+      --v-panel: #121216;
+      --v-acid: #ccff00;
+      --v-mint: #00ff66;
+      --v-violet: #8b5cf6;
+      --v-text: #f4f4f5;
+      --v-type: "Vibe Pixel", "Cascadia Mono", Consolas, monospace;
+    --v-masthead: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20588%20143%22%3E%3Cdefs%3E%3Cpath%20id%3D%22word%22%20d%3D%22M0%200h1v1h-1zM4%200h1v1h-1zM0%201h1v1h-1zM4%201h1v1h-1zM0%202h1v1h-1zM4%202h1v1h-1zM0%203h1v1h-1zM4%203h1v1h-1zM0%204h1v1h-1zM4%204h1v1h-1zM1%205h1v1h-1zM3%205h1v1h-1zM2%206h1v1h-1zM6%200h1v1h-1zM7%200h1v1h-1zM8%200h1v1h-1zM9%200h1v1h-1zM10%200h1v1h-1zM8%201h1v1h-1zM8%202h1v1h-1zM8%203h1v1h-1zM8%204h1v1h-1zM8%205h1v1h-1zM6%206h1v1h-1zM7%206h1v1h-1zM8%206h1v1h-1zM9%206h1v1h-1zM10%206h1v1h-1zM12%200h1v1h-1zM13%200h1v1h-1zM14%200h1v1h-1zM15%200h1v1h-1zM12%201h1v1h-1zM16%201h1v1h-1zM12%202h1v1h-1zM16%202h1v1h-1zM12%203h1v1h-1zM13%203h1v1h-1zM14%203h1v1h-1zM15%203h1v1h-1zM12%204h1v1h-1zM16%204h1v1h-1zM12%205h1v1h-1zM16%205h1v1h-1zM12%206h1v1h-1zM13%206h1v1h-1zM14%206h1v1h-1zM15%206h1v1h-1zM18%200h1v1h-1zM19%200h1v1h-1zM20%200h1v1h-1zM21%200h1v1h-1zM22%200h1v1h-1zM18%201h1v1h-1zM18%202h1v1h-1zM18%203h1v1h-1zM19%203h1v1h-1zM20%203h1v1h-1zM21%203h1v1h-1zM18%204h1v1h-1zM18%205h1v1h-1zM18%206h1v1h-1zM19%206h1v1h-1zM20%206h1v1h-1zM21%206h1v1h-1zM22%206h1v1h-1zM28%200h1v1h-1zM29%200h1v1h-1zM30%200h1v1h-1zM31%200h1v1h-1zM27%201h1v1h-1zM27%202h1v1h-1zM27%203h1v1h-1zM27%204h1v1h-1zM27%205h1v1h-1zM28%206h1v1h-1zM29%206h1v1h-1zM30%206h1v1h-1zM31%206h1v1h-1zM34%200h1v1h-1zM35%200h1v1h-1zM36%200h1v1h-1zM33%201h1v1h-1zM37%201h1v1h-1zM33%202h1v1h-1zM37%202h1v1h-1zM33%203h1v1h-1zM37%203h1v1h-1zM33%204h1v1h-1zM37%204h1v1h-1zM33%205h1v1h-1zM37%205h1v1h-1zM34%206h1v1h-1zM35%206h1v1h-1zM36%206h1v1h-1zM39%200h1v1h-1zM40%200h1v1h-1zM41%200h1v1h-1zM42%200h1v1h-1zM39%201h1v1h-1zM43%201h1v1h-1zM39%202h1v1h-1zM43%202h1v1h-1zM39%203h1v1h-1zM43%203h1v1h-1zM39%204h1v1h-1zM43%204h1v1h-1zM39%205h1v1h-1zM43%205h1v1h-1zM39%206h1v1h-1zM40%206h1v1h-1zM41%206h1v1h-1zM42%206h1v1h-1zM45%200h1v1h-1zM46%200h1v1h-1zM47%200h1v1h-1zM48%200h1v1h-1zM49%200h1v1h-1zM47%201h1v1h-1zM47%202h1v1h-1zM47%203h1v1h-1zM47%204h1v1h-1zM47%205h1v1h-1zM45%206h1v1h-1zM46%206h1v1h-1zM47%206h1v1h-1zM48%206h1v1h-1zM49%206h1v1h-1zM51%200h1v1h-1zM55%200h1v1h-1zM51%201h1v1h-1zM52%201h1v1h-1zM55%201h1v1h-1zM51%202h1v1h-1zM52%202h1v1h-1zM55%202h1v1h-1zM51%203h1v1h-1zM53%203h1v1h-1zM55%203h1v1h-1zM51%204h1v1h-1zM54%204h1v1h-1zM55%204h1v1h-1zM51%205h1v1h-1zM54%205h1v1h-1zM55%205h1v1h-1zM51%206h1v1h-1zM55%206h1v1h-1zM58%200h1v1h-1zM59%200h1v1h-1zM60%200h1v1h-1zM61%200h1v1h-1zM57%201h1v1h-1zM57%202h1v1h-1zM57%203h1v1h-1zM59%203h1v1h-1zM60%203h1v1h-1zM61%203h1v1h-1zM57%204h1v1h-1zM61%204h1v1h-1zM57%205h1v1h-1zM61%205h1v1h-1zM58%206h1v1h-1zM59%206h1v1h-1zM60%206h1v1h-1zM61%206h1v1h-1z%22%2F%3E%3C%2Fdefs%3E%3Cuse%20href%3D%22%23word%22%20fill%3D%22%23A855F7%22%20transform%3D%22translate%2826%2029%29%20scale%289%2010%29%22%2F%3E%3Cuse%20href%3D%22%23word%22%20fill%3D%22%2300FF66%22%20transform%3D%22translate%2818%2023%29%20scale%289%2010%29%22%2F%3E%3Cuse%20href%3D%22%23word%22%20fill%3D%22%23CCFF00%22%20transform%3D%22translate%2821%2024%29%20scale%289%2010%29%22%2F%3E%3Cpath%20d%3D%22M21%20106h543v2H21zM21%20117h72v8H21z%22%20fill%3D%22%23A855F7%22%2F%3E%3Ctext%20x%3D%22110%22%20y%3D%22129%22%20fill%3D%22%23F4F4F5%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2220%22%20font-weight%3D%22bold%22%20letter-spacing%3D%222%22%3E%2F%2F%20DECENTRATHON%20EDITION%3C%2Ftext%3E%3Ctext%20x%3D%22564%22%20y%3D%22129%22%20fill%3D%22%23CCFF00%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2220%22%20font-weight%3D%22bold%22%20text-anchor%3D%22end%22%3E6.0%3C%2Ftext%3E%3Cpath%20d%3D%22M4%2012h17v3H7v12H4zM580%2093h-3v13h-12v3h15z%22%20fill%3D%22%2300FF66%22%2F%3E%3C%2Fsvg%3E");
+    --v-ticket: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20180%20116%22%3E%3Cg%20transform%3D%22rotate%28-6%2090%2058%29%22%3E%3Cpath%20d%3D%22M20%2020H155L163%2028V46L157%2051V63L163%2068V86L154%2094H20L13%2087V68L19%2061V50L13%2044V28Z%22%20stroke%3D%22%2309090B%22%20stroke-width%3D%227%22%20fill%3D%22%2309090B%22%20transform%3D%22translate%284%205%29%22%2F%3E%3Cpath%20d%3D%22M20%2020H155L163%2028V46L157%2051V63L163%2068V86L154%2094H20L13%2087V68L19%2061V50L13%2044V28Z%22%20stroke%3D%22%23F4F4F5%22%20stroke-width%3D%225%22%20stroke-linejoin%3D%22round%22%20fill%3D%22%23CCFF00%22%2F%3E%3Cpath%20d%3D%22M26%2031h35v29H26z%22%20fill%3D%22%2309090B%22%2F%3E%3Ctext%20x%3D%2231%22%20y%3D%2253%22%20fill%3D%22%23CCFF00%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2215%22%20font-weight%3D%22bold%22%20%3E6.0%3C%2Ftext%3E%3Ctext%20x%3D%2269%22%20y%3D%2244%22%20fill%3D%22%2309090B%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2222%22%20font-weight%3D%22bold%22%20%3EVIBE%3C%2Ftext%3E%3Ctext%20x%3D%2269%22%20y%3D%2257%22%20fill%3D%22%2309090B%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%20%3E%2F%2F%20KZ%3C%2Ftext%3E%3Cpath%20d%3D%22M25%2068h125v2H25z%22%20fill%3D%22%2309090B%22%2F%3E%3Ctext%20x%3D%2225%22%20y%3D%2284%22%20fill%3D%22%2309090B%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2216%22%20font-weight%3D%22bold%22%20%3EDECENTRATHON%3C%2Ftext%3E%3Cpath%20d%3D%22M125%2032h2v28h-2z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M129%2032h1v28h-1z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M132%2032h4v28h-4z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M138%2032h1v28h-1z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M141%2032h3v28h-3z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M147%2032h2v28h-2z%22%20fill%3D%22%2309090B%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    --v-terminal: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20180%20116%22%3E%3Cg%20transform%3D%22rotate%284%2090%2058%29%22%3E%3Cpath%20d%3D%22M24%2017H149L159%2027V84L149%2094H24L15%2085V27Z%22%20stroke%3D%22%2309090B%22%20stroke-width%3D%227%22%20fill%3D%22%2309090B%22%20transform%3D%22translate%284%205%29%22%2F%3E%3Cpath%20d%3D%22M24%2017H149L159%2027V84L149%2094H24L15%2085V27Z%22%20stroke%3D%22%23F4F4F5%22%20stroke-width%3D%225%22%20stroke-linejoin%3D%22round%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M34%2029h33v5h6v21h-6v9H38v-9h-7V35h3z%22%20fill%3D%22%2300FF66%22%2F%3E%3Cpath%20d%3D%22M39%2040h9v9h-9zM56%2040h9v9h-9zM49%2051h6v5h-6zM43%2060h4v6h-4zM55%2060h4v6h-4z%22%20fill%3D%22%2309090B%22%2F%3E%3Ctext%20x%3D%2281%22%20y%3D%2247%22%20fill%3D%22%23F4F4F5%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2223%22%20font-weight%3D%22bold%22%20%3E%26gt%3B_01%3C%2Ftext%3E%3Ctext%20x%3D%2281%22%20y%3D%2262%22%20fill%3D%22%2300FF66%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%20%3EPEER%20%2F%20KZ%3C%2Ftext%3E%3Cpath%20d%3D%22M22%2069h132v18H22z%22%20fill%3D%22%23A855F7%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2283%22%20fill%3D%22%2309090B%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2213%22%20font-weight%3D%22bold%22%20%3EHACKALEM%20%2F%2F%2001%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    --v-bug: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20180%20116%22%3E%3Cg%20transform%3D%22rotate%28-4%2090%2058%29%22%3E%3Cpath%20d%3D%22M36%2059V33L52%2033V20H70L77%2014H105L113%2021H128V32H141V62H154V92L144%20100H31L22%2092V65Z%22%20stroke%3D%22%2309090B%22%20stroke-width%3D%227%22%20fill%3D%22%2309090B%22%20transform%3D%22translate%284%205%29%22%2F%3E%3Cpath%20d%3D%22M36%2059V33L52%2033V20H70L77%2014H105L113%2021H128V32H141V62H154V92L144%20100H31L22%2092V65Z%22%20stroke%3D%22%23F4F4F5%22%20stroke-width%3D%225%22%20stroke-linejoin%3D%22round%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M72%2027h6v6h22v-6h6v6h-5v6h8v8h9v-5h5v10h-14v5h16v5h-16v6h14v10h-5v-5h-13v4H76v-4H64v5h-5V68h12v-6H56v-5h15v-5H58V42h5v5h8v-8h8v-6h-7z%22%20fill%3D%22%2300FF66%22%2F%3E%3Cpath%20d%3D%22M86%2050h4v21h-4zM80%2040h5v5h-5zM95%2040h5v5h-5z%22%20fill%3D%22%2309090B%22%2F%3E%3Ctext%20x%3D%2289%22%20y%3D%2293%22%20fill%3D%22%23CCFF00%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2214%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3EIT%26%23x27%3BS%20A%20FEATURE%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    --v-coffee: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20180%20116%22%3E%3Cg%20transform%3D%22rotate%285%2090%2058%29%22%3E%3Cpath%20d%3D%22M24%2077H34V39H48V21L63%2013H91L99%2020V35H129L146%2044V69L138%2077H155V99H24Z%22%20stroke%3D%22%2309090B%22%20stroke-width%3D%227%22%20fill%3D%22%2309090B%22%20transform%3D%22translate%284%205%29%22%2F%3E%3Cpath%20d%3D%22M24%2077H34V39H48V21L63%2013H91L99%2020V35H129L146%2044V69L138%2077H155V99H24Z%22%20stroke%3D%22%23F4F4F5%22%20stroke-width%3D%225%22%20stroke-linejoin%3D%22round%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M44%2045h53v29l-8%207H53l-9-8zM97%2049h18v20l-8%205H97v-7h8l3-4v-7H97z%22%20fill%3D%22%23F4F4F5%22%2F%3E%3Cpath%20d%3D%22M51%2046h38v4H51zM57%2070h24v4H57z%22%20fill%3D%22%23A855F7%22%2F%3E%3Cpath%20d%3D%22M58%2038v-8h6v-9h5v12h-6v5zM74%2037v-7l6-5v-8h5v10l-6%206v4z%22%20fill%3D%22%2300FF66%22%2F%3E%3Ctext%20x%3D%2260%22%20y%3D%2265%22%20fill%3D%22%2309090B%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2215%22%20font-weight%3D%22bold%22%20%3E%7B%3B%7D%3C%2Ftext%3E%3Ctext%20x%3D%22118%22%20y%3D%2250%22%20fill%3D%22%23CCFF00%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2214%22%20font-weight%3D%22bold%22%20%3EKZ%3C%2Ftext%3E%3Ctext%20x%3D%2290%22%20y%3D%2296%22%20fill%3D%22%23F4F4F5%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2215%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3ECOMPILE%20OR%20DIE%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    --v-commit: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20180%20116%22%3E%3Cg%20transform%3D%22rotate%28-5%2090%2058%29%22%3E%3Cpath%20d%3D%22M19%2015H142L158%2030V94L149%20101H19L12%2094V22Z%22%20stroke%3D%22%2309090B%22%20stroke-width%3D%227%22%20fill%3D%22%2309090B%22%20transform%3D%22translate%284%205%29%22%2F%3E%3Cpath%20d%3D%22M19%2015H142L158%2030V94L149%20101H19L12%2094V22Z%22%20stroke%3D%22%23F4F4F5%22%20stroke-width%3D%225%22%20stroke-linejoin%3D%22round%22%20fill%3D%22%23A855F7%22%2F%3E%3Cpath%20d%3D%22M25%2034h123v3H25zM25%2073h123v3H25z%22%20fill%3D%22%2309090B%22%2F%3E%3Ctext%20x%3D%2228%22%20y%3D%2231%22%20fill%3D%22%2309090B%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2212%22%20font-weight%3D%22bold%22%20%3E%D0%94%D0%95%D0%94%D0%9B%D0%90%D0%99%D0%9D%20%D0%92%D0%A7%D0%95%D0%A0%D0%90%3C%2Ftext%3E%3Ctext%20x%3D%2226%22%20y%3D%2260%22%20fill%3D%22%2309090B%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2223%22%20font-weight%3D%22bold%22%20%3Egit%20push%3C%2Ftext%3E%3Ctext%20x%3D%2228%22%20y%3D%2291%22%20fill%3D%22%23F4F4F5%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2218%22%20font-weight%3D%22bold%22%20%3E--force%3C%2Ftext%3E%3Cpath%20d%3D%22M111%2081h4l-5%2010h-4z%22%20fill%3D%22%23CCFF00%22%2F%3E%3Cpath%20d%3D%22M119%2081h4l-5%2010h-4z%22%20fill%3D%22%23CCFF00%22%2F%3E%3Cpath%20d%3D%22M127%2081h4l-5%2010h-4z%22%20fill%3D%22%23CCFF00%22%2F%3E%3Cpath%20d%3D%22M135%2081h4l-5%2010h-4z%22%20fill%3D%22%23CCFF00%22%2F%3E%3Cpath%20d%3D%22M143%2081h4l-5%2010h-4z%22%20fill%3D%22%23CCFF00%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    --v-keys: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20180%20116%22%3E%3Cg%20transform%3D%22rotate%284%2090%2058%29%22%3E%3Cpath%20d%3D%22M23%2017H116L121%2012L159%2049V73L150%2082V97H21L13%2088V27Z%22%20stroke%3D%22%2309090B%22%20stroke-width%3D%227%22%20fill%3D%22%2309090B%22%20transform%3D%22translate%284%205%29%22%2F%3E%3Cpath%20d%3D%22M23%2017H116L121%2012L159%2049V73L150%2082V97H21L13%2088V27Z%22%20stroke%3D%22%23F4F4F5%22%20stroke-width%3D%225%22%20stroke-linejoin%3D%22round%22%20fill%3D%22%2300FF66%22%2F%3E%3Cpath%20d%3D%22M27%2038h104v36H27z%22%20fill%3D%22%23F4F4F5%22%2F%3E%3Cpath%20d%3D%22M33%2043h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M42%2043h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M51%2043h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M60%2043h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M69%2043h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M78%2043h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M87%2043h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M96%2043h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M105%2043h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M114%2043h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M33%2052h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M42%2052h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M51%2052h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M60%2052h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M69%2052h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M78%2052h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M87%2052h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M96%2052h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M105%2052h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M114%2052h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M33%2061h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M42%2061h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M51%2061h6v5h-6z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M62%2061h42v5H62z%22%20fill%3D%22%2309090B%22%2F%3E%3Cpath%20d%3D%22M120%2022v43l9-9%209%2016%209-5-10-16h15z%22%20stroke%3D%22%2309090B%22%20stroke-width%3D%223%22%20fill%3D%22%23CCFF00%22%2F%3E%3Ctext%20x%3D%2286%22%20y%3D%2292%22%20fill%3D%22%2309090B%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2217%22%20font-weight%3D%22bold%22%20text-anchor%3D%22middle%22%3EVIBE%20CODING%3C%2Ftext%3E%3Ctext%20x%3D%2235%22%20y%3D%2231%22%20fill%3D%22%2309090B%22%20font-family%3D%22Consolas%2Cmonospace%22%20font-size%3D%2211%22%20font-weight%3D%22bold%22%20%3E%D0%90%D0%9B%D2%92%D0%90%2C%20DEV%21%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    }
+    body {
+      color-scheme: dark !important;
+      --newtab-background-color: var(--v-ink) !important;
+      --newtab-background-color-secondary: var(--v-panel) !important;
+      --newtab-text-primary-color: var(--v-text) !important;
+      --newtab-text-secondary-color: #c3bdce !important;
+      --text-color: var(--v-text) !important;
+      --newtab-primary-action-background: var(--v-acid) !important;
+      color: var(--v-text) !important;
+      background: linear-gradient(#a5b8910c 1px, transparent 1px),
+                  linear-gradient(90deg, #a5b8910c 1px, transparent 1px),
+                  var(--v-ink) !important;
+      background-size: 28px 28px !important;
+    }
+    .logo-and-wordmark-wrapper { display: none !important; }
+    /* Keep the mark in the search column in both the Classic and Nova layouts. */
+    .search-wrapper::before {
+      content: "" !important;
+      display: block !important;
+      grid-column: 1 / -1;
+      width: min(100%, 860px);
+      height: clamp(84px, 12vw, 145px);
+      margin: 0 auto 18px;
+      background: var(--v-ticket) left 1% center / 14% auto no-repeat,
+                  var(--v-masthead) center / min(63%, 520px) auto no-repeat,
+                  var(--v-terminal) right 1% center / 14% auto no-repeat;
+      pointer-events: none;
+    }
+    .search-wrapper { position: relative !important; inset: auto !important; }
+    .nova-outer-wrapper.stuck-search::before { display: none !important; }
+    body:not(:has(.search-wrapper)) .logo-and-wordmark-wrapper { display: block !important; }
+    .logo-and-wordmark {
+      background: var(--v-masthead) center / contain no-repeat !important;
+      width: min(75vw, 290px) !important;
+      max-width: 100% !important;
+      height: 72px !important;
+    }
+    .logo-and-wordmark > * { visibility: hidden !important; }
+    .search-inner-wrapper {
+      box-sizing: border-box !important;
+      background: var(--v-panel) !important;
+      border: 1px solid var(--v-acid) !important;
+      border-radius: 4px !important;
+      box-shadow: 4px 4px 0 var(--v-violet) !important;
+    }
+    .search-inner-wrapper:focus-within {
+      outline: 2px solid var(--v-mint) !important;
+      outline-offset: 2px !important;
+    }
+    .search-inner-wrapper :is(content-search-handoff-ui, moz-urlbar) {
+      color-scheme: dark !important;
+      --content-search-handoff-ui-background-color: var(--v-panel) !important;
+      --content-search-handoff-ui-color: var(--v-text) !important;
+      --content-search-handoff-ui-fill: var(--v-acid) !important;
+      --content-search-handoff-ui-caret-color: var(--v-mint) !important;
+      --toolbar-field-background-color: var(--v-panel) !important;
+      --toolbar-field-focus-background-color: var(--v-panel) !important;
+      --toolbar-field-color: var(--v-text) !important;
+      --toolbar-field-focus-color: var(--v-text) !important;
+      --urlbar-background-color: var(--v-panel) !important;
+      --urlbar-background-border-radius: 3px !important;
+      font-family: var(--v-type) !important;
+    }
+    .search-handoff-button {
+      background-color: var(--v-panel) !important;
+      color: var(--v-text) !important;
+      border-radius: 3px !important;
+    }
+    .top-site-outer .tile {
+      background: var(--v-panel) !important;
+      border: 1px solid #9bb23e !important;
+      border-radius: 4px !important;
+      box-shadow: 2px 2px 0 #584271 !important;
+    }
+    .top-site-outer:is(:hover, :focus-within) .tile {
+      border-color: var(--v-acid) !important;
+      box-shadow: 4px 4px 0 var(--v-violet) !important;
+      transform: translate(-2px, -2px);
+    }
+    .top-site-outer .title { color: var(--v-text) !important; }
+    .widgets-title-heading, .newtab-widget-title, .widget-title,
+    .weather-forecast-widget .city-name, .clocks-city {
+      font-family: var(--v-type) !important;
+      color: var(--v-text) !important;
+    }
+    :is(.focus-timer, .clocks-widget, .weather-widget, .weather-forecast-widget, .weatherButton) {
+      --card-border: 1px solid var(--v-violet) !important;
+      --button-background-color-primary: var(--v-acid) !important;
+      --button-text-color-primary: var(--v-ink) !important;
+      color: var(--v-text) !important;
+      background: linear-gradient(90deg, var(--v-acid) 30px, transparent 30px) 14px 0 / 48px 3px no-repeat,
+                  var(--v-panel) !important;
+      border: 1px solid var(--v-violet) !important;
+      border-radius: 5px !important;
+      box-shadow: 4px 4px 0 #503980 !important;
+    }
+    .widgets-container:not([data-section-collapsed]) >
+      .widget-wrapper:is([data-widget-id="clocks"], [data-widget-id="focusTimer"], [data-widget-id="weather"]) {
+      display: block !important;
+    }
+    .widgets-section-container:has(.widget-wrapper[data-widget-id]) .widgets-row-toggle {
+      display: none !important;
+    }
+    .clocks-time, .focus-timer-time-text, .focus-timer-spinbutton,
+    .progress-circle-label, .progress-circle-label input, .temperature-unit,
+    .weather-info-row > :first-child, .weather-forecast-widget .current-temperature {
+      color: var(--v-acid) !important;
+      font-family: var(--v-type) !important;
+      font-variant-numeric: tabular-nums;
+    }
+    .focus-timer .progress-circle { stroke: var(--v-mint) !important; }
+    .focus-timer .progress-circle-background { stroke: #463555 !important; }
+    .focus-timer-play-button { --button-background-color-primary: var(--v-acid) !important; }
+    :is(.widgets-container, .top-sites-list) :focus-visible {
+      outline: 2px solid var(--v-mint) !important;
+      outline-offset: 2px;
+    }
+    /* In-flow sticker rail. Content above keeps its native hit targets at any zoom. */
+    #root:not(:has(.widgets-section-container))::after, .widgets-section-container::after {
+      content: "";
+      display: block;
+      pointer-events: none;
+      width: min(92%, 950px);
+      grid-column: 1 / -1;
+      height: clamp(82px, 10vw, 120px);
+      margin: 24px auto 0;
+      background: var(--v-bug) left 3% center, var(--v-coffee) left 34% center,
+                  var(--v-commit) right 34% center, var(--v-keys) right 3% center;
+      background-size: min(22%, 155px) auto;
+      background-repeat: no-repeat;
+    }
+    @media (max-width: 700px) {
+      .search-wrapper::before { background: var(--v-masthead) center / min(90%, 420px) auto no-repeat; }
+      #root:not(:has(.widgets-section-container))::after, .widgets-section-container::after {
+        width: min(94%, 500px);
+        height: clamp(132px, 38vw, 198px);
+        background: var(--v-ticket) left top, var(--v-bug) center top, var(--v-terminal) right top,
+                    var(--v-coffee) left bottom, var(--v-commit) center bottom, var(--v-keys) right bottom;
+        background-size: 31% 49%;
+        background-repeat: no-repeat;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .top-site-outer:is(:hover, :focus-within) .tile { transform: none; }
+    }
+  }
+}

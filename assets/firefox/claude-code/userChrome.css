@@ -1,0 +1,66 @@
+/* Builder Deck · Firefox 160 on Windows */
+@-moz-document url("chrome://browser/content/browser.xhtml") {
+  @media not (forced-colors: active) {
+    :root {
+      --bd-bg: #191919;
+      --bd-bar: #1c1b1a;
+      --bd-card: #232220;
+      --bd-hover: #363431;
+      --bd-ink: #f3f1ec;
+      --bd-muted: #9a958e;
+      --bd-accent: #d97757;
+      --bd-accent-hover: #e58869;
+      --toolbar-bgcolor: var(--bd-bar) !important;
+      --toolbar-color: var(--bd-ink) !important;
+      --toolbox-bgcolor: var(--bd-bg) !important;
+      --toolbox-textcolor: var(--bd-ink) !important;
+      --toolbar-field-color: var(--bd-ink) !important;
+      --toolbar-field-focus-color: var(--bd-ink) !important;
+      --toolbar-field-background-color: var(--bd-card) !important;
+      --toolbar-field-focus-background-color: var(--bd-card) !important;
+      --toolbar-field-border-color: var(--bd-hover) !important;
+      --toolbar-field-border-color-focus: var(--bd-accent) !important;
+      --toolbarbutton-hover-background: var(--bd-hover) !important;
+      --toolbarbutton-active-background: #4a3830 !important;
+      --sidebar-background-color: var(--bd-bar) !important;
+      --sidebar-text-color: var(--bd-ink) !important;
+      --urlbarView-highlight-background: #48372f !important;
+      --urlbarView-highlight-color: var(--bd-ink) !important;
+    }
+    #navigator-toolbox, #TabsToolbar, #toolbar-menubar, #PersonalToolbar,
+    #vertical-tabs, #sidebar-container, sidebar-main, #sidebar-box, #sidebar-header {
+      background: var(--bd-bar) !important;
+      color: var(--bd-ink) !important;
+    }
+    #nav-bar { background: #262523 !important; color: var(--bd-ink) !important; }
+    #PersonalToolbar { border-bottom: 1px solid var(--bd-hover) !important; }
+    #sidebar-container { border-inline: 1px solid var(--bd-hover) !important; }
+    .tab-background { border-radius: 6px !important; }
+    .tabbrowser-tab:hover .tab-background { background: var(--bd-hover) !important; }
+    .tabbrowser-tab:is([selected], [visuallyselected]) .tab-background {
+      background: var(--bd-card) !important;
+      box-shadow: inset 0 2px var(--bd-accent), inset 0 0 0 1px var(--bd-hover) !important;
+    }
+    #vertical-tabs .tabbrowser-tab:is([selected], [visuallyselected]) .tab-background {
+      box-shadow: inset 3px 0 var(--bd-accent), inset 0 0 0 1px var(--bd-hover) !important;
+    }
+    .tab-label, #PersonalToolbar .bookmark-item { color: var(--bd-ink) !important; }
+    #nav-bar .toolbarbutton-1:not([disabled="true"]) {
+      --toolbarbutton-icon-fill: var(--bd-accent) !important;
+      color: var(--bd-accent) !important;
+    }
+    #nav-bar .toolbarbutton-1:not([disabled="true"]):hover { color: var(--bd-accent-hover) !important; }
+    #urlbar { --urlbar-background-color: var(--bd-card) !important; --urlbar-background-border-radius: 7px !important; }
+    #urlbar > .urlbar-background, #urlbar-background, #searchbar {
+      background: var(--bd-card) !important;
+      border: 1px solid var(--bd-hover) !important;
+      border-radius: 7px !important;
+    }
+    #urlbar:is([focused], :focus-within) > :is(.urlbar-background, #urlbar-background), #searchbar:focus-within {
+      outline: 2px solid var(--bd-accent) !important;
+      outline-offset: -1px !important;
+    }
+    #urlbar-input { color: var(--bd-ink) !important; caret-color: var(--bd-accent) !important; font-family: "JetBrains Mono", Consolas, monospace !important; }
+    #urlbar-input::placeholder { color: var(--bd-muted) !important; }
+  }
+}

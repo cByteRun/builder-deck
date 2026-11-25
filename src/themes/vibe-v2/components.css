@@ -1,0 +1,63 @@
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="hack"] {
+  background: url("../../../assets/stickers/terminal.svg") center / contain
+    no-repeat;
+  aspect-ratio: 180/116;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="hack"] svg {
+  visibility: hidden;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="sol"] {
+  background: url("../../../assets/stickers/ticket.svg") center / contain
+    no-repeat;
+  aspect-ratio: 180/116;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="sol"] svg {
+  visibility: hidden;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="decent"] {
+  background: url("../../../assets/stickers/bug.svg") center / contain no-repeat;
+  aspect-ratio: 180/116;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="decent"] svg {
+  visibility: hidden;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="coffee"] {
+  background: url("../../../assets/stickers/coffee.svg") center / contain
+    no-repeat;
+  aspect-ratio: 180/116;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="coffee"] svg {
+  visibility: hidden;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="cli"] {
+  background: url("../../../assets/stickers/commit.svg") center / contain
+    no-repeat;
+  aspect-ratio: 180/116;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="cli"] svg {
+  visibility: hidden;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="ship"] {
+  background: url("../../../assets/stickers/keys.svg") center / contain
+    no-repeat;
+  aspect-ratio: 180/116;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="ship"] svg {
+  visibility: hidden;
+}
+[data-theme="vibe-coding"] .hybrid .sticker[data-id="think"] {
+  display: none;
+}
+[data-theme="vibe-coding"] .hero h1,
+[data-theme="vibe-coding"] .hero h1 em {
+  font: normal clamp(36px, 3.8vw, 68px) / 1 var(--pixel);
+  letter-spacing: -0.06em;
+  color: var(--accent-terracotta);
+  text-shadow: 3px 3px #8b5cf6;
+}
+[data-theme="vibe-coding"] .terminal,
+[data-theme="vibe-coding"] .quick-link,
+[data-theme="vibe-coding"] .shell-tab[aria-pressed="true"] {
+  border-radius: 3px;
+  box-shadow: 2px 2px #8b5cf6;
+}
