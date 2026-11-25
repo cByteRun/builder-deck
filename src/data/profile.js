@@ -1,10 +1,9 @@
-export const portfolioUrl = "https://proof-of-work-hub.vercel.app/";
 export const earnUrl = "https://superteam.fun/earn/t/protective-fuchsia-78";
 
 // Colors are display tints for dark surfaces. The mark sheet retains source geometry.
 export const trophies = [
   {
-    id: "hack", name: "HackAlem AI", result: "Guinness Record",
+    id: "hack", credential: "CERT-20261014-AAD5ABF3", name: "HackAlem AI", result: "Guinness Record",
     milestone: "Guinness World Record participant", detail: "2,415 builders gathered at Astana EXPO.",
     color: "#009af0", pet: "Signal axolotl", reaction: "ripple", phrase: "2,415 signals received.",
     identity: "https://hackalem.ai/logo.svg",
@@ -34,7 +33,7 @@ export const trophies = [
     identity: "https://decentrathon.ai/en",
   },
   {
-    id: "sana", name: "AI-SANA", result: "Stage 2",
+    id: "sana", credential: "f42775b5-d32a-4dde-bb8e-f5b3d892738f", name: "AI-SANA", result: "Stage 2",
     milestone: "Stage 2", detail: "Stage 2 credential recorded in Platonus.",
     color: "#9bcdf6", pet: "Orbit crane", reaction: "glide", phrase: "Stage two in orbit.",
     identity: "https://aisana.gov.kz/media/1069/logo.png",

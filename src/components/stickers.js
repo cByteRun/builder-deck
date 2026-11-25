@@ -41,8 +41,7 @@ const clamp = (value, min, max) => Math.max(min, Math.min(max, value));
 
 // Choose the closest point in any perimeter strip that fits the rotated decal.
 function project(board, hero, sticker, [x, y, angle]) {
-  const bounds = board.getBoundingClientRect(),
-    core = hero.getBoundingClientRect();
+  const bounds = board.getBoundingClientRect();
   const w = bounds.width,
     h = bounds.height;
   const rad = (angle * Math.PI) / 180,
@@ -52,6 +51,7 @@ function project(board, hero, sticker, [x, y, angle]) {
   const ry = (sin * sticker.offsetWidth + cos * sticker.offsetHeight) / 2 + 4;
   const px = (x * w) / 100,
     py = (y * h) / 100;
+  const core = hero.getBoundingClientRect();
   const strips = [
     [rx, ry, core.left - bounds.left - rx - 8, h - ry],
     [core.right - bounds.left + rx + 8, ry, w - rx, h - ry],
@@ -81,7 +81,7 @@ export function mountStickers(board, celebrate) {
   function refresh() {
     if (!board.clientWidth) return;
     const next =
-      activeTheme() + ".hybrid." + (compact.matches ? "compact" : "wide");
+      (activeTheme() + ".hybrid.") + (compact.matches ? "compact" : "wide");
     if (next !== key) {
       key = next;
       saved = read(key, {}) || {};
@@ -220,12 +220,9 @@ export function mountStickers(board, celebrate) {
   }
   const observer = new ResizeObserver(refresh);
   observer.observe(board);
-  observer.observe(hero);
+  if (hero) observer.observe(hero);
   compact.addEventListener("change", refresh, options);
   tucked.addEventListener("change", refresh, options);
   refresh();
-  return () => {
-    events.abort();
-    observer.disconnect();
-  };
+  return { refresh, destroy() { events.abort(); observer.disconnect(); } };
 }

@@ -4,10 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#141312" />
-    <title>Builder Deck · Daniil Tkachev</title>
+    <title>Daniil Tkachev · Proof of Work Hub | Builder Deck</title>
     <meta
       name="description"
-      content="Daniil Tkachev’s personal workspace and trophy shelf."
+      content="Daniil Tkachev’s public engineering portfolio. Explore B2B SaaS, AI and Web3 projects, source code and hackathon credentials."
     />
     <link rel="icon" href="./assets/daniil-avatar.webp" type="image/webp" />
     <link rel="preload" as="font" type="font/ttf" href="./assets/fonts/classicpixel.ttf" crossorigin />
@@ -23,14 +23,15 @@
     <link rel="stylesheet" href="./src/themes/claude-code/components.css" />
     <link rel="stylesheet" href="./src/themes/vibe-v1/components.css" />
     <link rel="stylesheet" href="./src/themes/vibe-v2/components.css" />
+    <link rel="stylesheet" href="./src/styles/hub.css" />
   </head>
   <body>
     <header class="mast">
       <div class="identity">
         <a
           class="wordmark"
-          href="#workspace"
-          aria-label="Builder Deck workspace"
+          href="/"
+          aria-label="Builder Deck · Proof of Work Hub"
           ><img
             src="./assets/daniil-avatar.webp"
             width="32"
@@ -47,6 +48,9 @@
         >
       </div>
       <div class="tools">
+        <nav id="header-socials" aria-label="Social profiles"></nav>
+        <select id="site-language" aria-label="Language"><option value="en">EN</option><option value="ru">RU</option><option value="kk">KZ</option></select>
+        <button id="open-palette" aria-label="Open command palette" aria-haspopup="dialog"><span data-icon="terminal"></span><kbd>Ctrl K</kbd></button>
         <span class="clock" title="Almaty time (UTC+5)"
           ><time id="clock"></time
           ><span class="zone"
@@ -58,8 +62,9 @@
       </div>
     </header>
     <main>
+      <section id="hub" role="tabpanel" aria-labelledby="tab-hub"><!--public-portfolio--></section>
       <section
-        id="workspace"
+        id="workspace" hidden
         role="tabpanel"
         aria-labelledby="tab-workspace"
       ></section>
@@ -73,23 +78,9 @@
     <footer>
       <div class="view-switcher">
         <nav class="dock" role="tablist" aria-label="Views">
-          <button
-            role="tab"
-            id="tab-workspace"
-            aria-controls="workspace"
-            aria-selected="true"
-          >
-            <span data-icon="terminal"></span>Workspace
-          </button>
-          <button
-            role="tab"
-            id="tab-shelf"
-            aria-controls="shelf"
-            aria-selected="false"
-            tabindex="-1"
-          >
-            <span data-icon="shelf"></span>Trophy Shelf
-          </button>
+          <button role="tab" id="tab-hub" aria-controls="hub" aria-selected="true" tabindex="0"><span data-icon="layers"></span><span data-label="Portfolio">Portfolio</span></button>
+          <button role="tab" id="tab-shelf" aria-controls="shelf" aria-selected="false" tabindex="-1"><span data-icon="shelf"></span><span data-label="Trophy Shelf">Trophy Shelf</span></button>
+          <button role="tab" id="tab-workspace" aria-controls="workspace" aria-selected="false" tabindex="-1"><span data-icon="terminal"></span><span data-label="Workspace">Workspace</span></button>
         </nav>
         <div class="rover-lane">
           <button
@@ -106,6 +97,7 @@
         </div>
       </section>
     </footer>
+    <div id="portfolio-overlays"></div>
     <dialog id="settings" aria-labelledby="dialog-title">
       <div class="dialog-head">
         <h2 id="dialog-title"></h2>
