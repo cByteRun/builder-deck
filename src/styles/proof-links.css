@@ -17,7 +17,7 @@
   border-radius: 7px;
   background: linear-gradient(
     130deg,
-    color-mix(in srgb, var(--text-primary) 3%, var(--bg-secondary)),
+    color-mix(in srgb, var(--brand) 5%, var(--bg-secondary)),
     var(--bg-secondary)
   );
   transition:
@@ -27,14 +27,14 @@
 }
 .proof-links a:is(:hover, :focus-visible) {
   transform: translateY(-2px);
-  border-color: var(--accent-terracotta);
-  box-shadow: 0 3px 12px var(--accent-terracotta-soft);
+  border-color: color-mix(in srgb, var(--brand) 70%, var(--border-subtle));
+  box-shadow: 0 3px 12px color-mix(in srgb, var(--brand) 12%, transparent);
 }
 .proof-links .ui {
   width: 18px;
   height: 18px;
   flex: none;
-  color: var(--text-secondary);
+  color: var(--brand);
 }
 .proof-links strong {
   display: block;
@@ -42,11 +42,14 @@
     550 12px/1.25 Inter,
     sans-serif;
 }
+.proof-links a > span {
+  min-width: 0;
+}
 .proof-links small {
   display: block;
   margin-top: 4px;
   color: var(--text-secondary);
-  font: 9px/1.45 var(--mono);
+  font: 11px/1.4 var(--mono);
   overflow-wrap: anywhere;
 }
 .wins-bar {

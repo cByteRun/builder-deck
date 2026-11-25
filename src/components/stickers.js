@@ -12,13 +12,13 @@ const wide = {
   ship: [78, 86, -8],
 };
 const narrow = {
-  think: [49, 5, -4],
+  think: [52, 3, -3],
   hack: [16, 9, -11],
   sol: [81, 9, 9],
-  ship: [54, 13, 5],
-  decent: [17, 91, -7],
-  coffee: [84, 91, 8],
-  cli: [50, 91, 5],
+  ship: [53, 13, 4],
+  decent: [19, 86, -6],
+  coffee: [80, 86, 7],
+  cli: [50, 96, 2],
 };
 const names = {
   hack: "HackAlem AI",
