@@ -5,12 +5,18 @@
   "type": "module",
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "build": "node scripts/build.mjs"
+    "build": "node scripts/build.mjs",
+    "lint": "eslint src scripts"
   },
   "engines": {
     "node": ">=20"
   },
   "devDependencies": {
+    "@types/react": "19.3.3",
+    "@types/react-dom": "19.3.0",
+    "eslint": "9.39.5",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
     "typescript": "5.9.3"
   }
 }
