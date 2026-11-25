@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="456" viewBox="0 0 1200 456" role="img" aria-labelledby="title description">
+  <title id="title">Builder Deck · Daniil Tkachev</title>
+  <desc id="description">B2B SaaS, AI Agents &amp; Web3 · Proof-of-Work Portfolio, Trophy Shelf &amp; Personal Workspace. A hooded pixel companion sits alongside the three modes of builder-deck.vercel.app.</desc>
+  <defs>
+    <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0H0V24" fill="none" stroke="#c0a693" stroke-opacity=".12"/>
+    </pattern>
+    <radialGradient id="glow">
+      <stop stop-color="#58342d"/><stop offset=".52" stop-color="#382621"/><stop offset="1" stop-color="#191715"/>
+    </radialGradient>
+  </defs>
+  <rect x="1" y="1" width="1198" height="454" rx="16" fill="#191715" stroke="#514339"/>
+  <rect x="1" y="1" width="1198" height="454" rx="16" fill="url(#grid)"/>
+  <g font-family="ui-monospace, 'DejaVu Sans Mono', monospace">
+    <path d="M43 62h1114" stroke="#493d35"/>
+    <g fill="#dda286" font-size="15">
+      <text x="44" y="39">@cByteRun</text>
+      <text x="151" y="39" fill="#baada0">Pavlodar, Kazakhstan</text>
+      <text x="1156" y="39" text-anchor="end">https://builder-deck.vercel.app</text>
+    </g>
+    <text x="43" y="158" fill="#f4ede0" font-family="Georgia, 'DejaVu Serif', serif" font-size="57" letter-spacing="-2">Builder Deck <tspan fill="#dd8868">· Daniil Tkachev</tspan></text>
+    <text x="46" y="211" fill="#f4ede0" font-size="23">B2B SaaS, AI Agents &amp; Web3 <tspan fill="#dd8868">·</tspan>
+      <tspan x="46" dy="32" font-size="20" fill="#c9b9a8">Proof-of-Work Portfolio, Trophy Shelf &amp; Personal Workspace</tspan>
+    </text>
+    <g transform="translate(46 273)" font-size="16">
+      <path d="M0 0h3v21H0z" fill="#dc8769"/>
+      <text x="15" y="16" fill="#f3e6d7">Ask your AI</text>
+      <text x="149" y="16" fill="#b6a89c">Claude / ChatGPT</text>
+      <path d="M330 2v17" stroke="#635247"/>
+      <text x="352" y="16" fill="#d4bcaa">EN / RU / KZ</text>
+    </g>
+    <g transform="translate(1012 190)">
+      <circle r="112" fill="url(#glow)"/>
+      <g stroke="#715044" fill="none">
+        <circle r="89" stroke-dasharray="2 7"/><ellipse rx="121" ry="46" transform="rotate(-28)" stroke-opacity=".75"/>
+        <path d="M-112-55v-13h13m198 136h13V55"/>
+      </g>
+      <rect x="-107" y="28" width="6" height="6" fill="#e09a78"/>
+      <rect x="93" y="-45" width="5" height="5" fill="#db997b"/>
+      <svg x="-76" y="-76" width="152" height="152" viewBox="0 0 32 32"><!--@mascot--></svg>
+    </g>
+    <g transform="translate(44 332)">
+      <rect width="353" height="85" rx="9" fill="#31231e" stroke="#925c46"/>
+      <rect x="369" width="353" height="85" rx="9" fill="#211e1c" stroke="#51433a"/>
+      <rect x="738" width="374" height="85" rx="9" fill="#211e1c" stroke="#51433a"/>
+      <g fill="none" stroke-width="2" stroke-linejoin="round">
+        <path d="m22 31 15-8 15 8-15 8z m0 7 15 8 15-8 m-30 7 15 8 15-8" stroke="#ed9c75"/>
+        <path d="M400 25h17v9q0 11-8.5 11T400 34z M400 28h-7v4q0 7 9 7m15-11h7v4q0 7-9 7m-6 6v6m-7 2h14" stroke="#e4ba78"/>
+        <path d="M761 25h32v27h-32z m5 8 5 5-5 5m9 0h9" stroke="#91bca9"/>
+      </g>
+      <g fill="#f1e6da" font-size="23">
+        <text x="69" y="37">Portfolio</text><text x="438" y="37">Trophy Shelf</text><text x="812" y="37">Workspace</text>
+      </g>
+      <g fill="#bdae9f" font-size="15">
+        <text x="69" y="62">Cases &amp; public evidence</text><text x="438" y="62">Wins &amp; credentials</text><text x="812" y="62">Search &amp; quick launch</text>
+      </g>
+    </g>
+  </g>
+</svg>
