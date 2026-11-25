@@ -1,13 +1,15 @@
-import { profileCards, mountWins } from "./components/proof-links.js";
+import { profileCards, mountWins, platforms } from "./components/proof-links.js";
 import { read, write } from "./lib/storage.js";
 import { icon } from "./components/icons.js";
 import { makePet } from "./components/pet.js";
 import { workspace } from "./components/terminal.js";
 import { shelf } from "./components/collections.js";
-import { mountStickers } from "./components/stickers.js";
+import { mountPortfolio } from "./portfolio/controller.js";
+import { translate } from "./portfolio/locale.js";
+import { mountStickers, stickerCanvas } from "./components/stickers.js";
 import { themeOptions } from "./components/theme-admin.js";
 import { commands, hosts, labels, prefixes } from "./data/search.js";
-import { portfolioUrl, trophies } from "./data/profile.js";
+import { trophies } from "./data/profile.js";
 import { themes, activeTheme } from "./themes/index.js";
 import {
   renderClassic,
@@ -23,13 +25,35 @@ const dialog = /** @type {HTMLDialogElement} */ (
 const pet = makePet();
 const query = () =>
   /** @type {HTMLInputElement} */ (document.getElementById("query"));
+const main = document.querySelector("main");
+const viewTabs = document.querySelector(".dock");
+let canvasStickers, currentView, workspaceTheme;
 let engine = "google",
   draft = "",
-  unmountStickers;
+  workspaceStickers;
 
 for (const el of document.querySelectorAll("[data-icon]"))
   el.innerHTML = icon(el.getAttribute("data-icon"));
-shelfPanel.innerHTML = shelf();
+const socials = platforms.filter(([id]) => ["github","x","linkedin","instagram"].includes(id));
+document.getElementById("header-socials").innerHTML = socials.map(([id,,name,,url]) =>
+  `<a href="${url}" aria-label="${name}" title="${name}" target="_blank" rel="noopener noreferrer">${icon(id)}</a>`).join("");
+if (/Mac|iPhone|iPad/.test(navigator.platform)) document.querySelector("#open-palette kbd").textContent = "⌘ K";
+
+function renderPublicChrome(lang) {
+  const tr = key => translate(key, lang);
+  const opened = [...shelfPanel.querySelectorAll("details[open]")].map(el => el.id);
+  shelfPanel.innerHTML = shelf(lang);
+  for (const id of opened) document.getElementById(id)?.setAttribute("open", "");
+  if (currentView === "shelf") document.getElementById("shelf-perch").append(pet.companion);
+  canvasStickers?.destroy();
+  const bomb = document.getElementById("bomb");
+  bomb.innerHTML = stickerCanvas(tr);
+  canvasStickers = mountStickers(bomb.querySelector("#sticker-canvas"), pet.happy);
+  for (const label of viewTabs.querySelectorAll("[data-label]")) label.textContent = tr(label.getAttribute("data-label"));
+  document.getElementById("open-palette").setAttribute("aria-label", tr("Open command palette"));
+  document.getElementById("site-language").setAttribute("aria-label", tr("Language"));
+}
+const portfolio = mountPortfolio({dialog, showDialog, navigate, onLanguage: renderPublicChrome});
 mountWins();
 function setEngine(name) {
   engine = name;
@@ -42,39 +66,61 @@ function setEngine(name) {
 }
 function renderTheme(id) {
   draft = query()?.value ?? draft;
-  unmountStickers?.();
+  workspaceStickers?.destroy();
+  workspaceStickers = null;
   document.documentElement.dataset.theme = Object.hasOwn(themes, id)
     ? id
     : "claude-code";
+  workspaceTheme = null;
+  route(false);
+}
+function prepareWorkspace() {
+  if (workspaceTheme === activeTheme()) return;
+  workspaceTheme = activeTheme();
   if (activeTheme() === "vibe-v1") renderClassic(draft);
   else {
     workspacePanel.innerHTML = workspace(themes[activeTheme()]);
     query().value = draft;
     document.getElementById("perch").append(pet.companion);
-    unmountStickers = mountStickers(
+    workspaceStickers = mountStickers(
       workspacePanel.querySelector(".board"),
       pet.happy,
     );
   }
   workspacePanel.insertAdjacentHTML("beforeend", profileCards());
   setEngine(engine);
-  route(false);
 }
 function route(celebrate = true) {
   const award = trophies.find((t) => location.hash === "#award-" + t.id);
-  const onShelf = location.hash === "#shelf" || Boolean(award);
-  const name = onShelf ? "shelf" : "workspace";
-  workspacePanel.hidden = onShelf;
-  shelfPanel.hidden = !onShelf;
-  for (const tab of document.querySelectorAll("button[role=tab]")) {
-    const selected = tab.getAttribute("aria-controls") === name;
+  const hash = location.hash.slice(1);
+  const name = award || hash === "shelf" ? "shelf" :
+    hash === "workspace" ? "workspace" : hash === "bomb" ? "bomb" : "hub";
+  const changed = currentView !== name;
+  currentView = name;
+  document.body.dataset.view = name;
+  for (const tab of viewTabs.querySelectorAll("button[role=tab]")) {
+    const id = tab.getAttribute("aria-controls");
+    const selected = id === name;
+    document.getElementById(id).hidden = !selected;
+    tab.toggleAttribute("hidden", id === "workspace" && !selected);
     tab.setAttribute("aria-selected", String(selected));
     tab.setAttribute("tabindex", selected ? "0" : "-1");
   }
-  document
-    .getElementById(onShelf ? "shelf-perch" : "perch")
-    ?.append(pet.companion);
-  if (onShelf && celebrate) pet.happy();
+  document.title = ({hub:"Daniil Tkachev · Proof of Work Hub",workspace:"Workspace",shelf:"Trophy Shelf",bomb:"Stickerbomb"})[name] + " | Builder Deck";
+  if (name === "workspace") { prepareWorkspace(); workspaceStickers?.refresh(); }
+  if (name === "bomb") canvasStickers.refresh();
+  if (changed) main.scrollTop = 0;
+  if (name === "hub") {
+    portfolio.enter();
+    if (hash.startsWith("project-")) {
+      portfolio.selectCase(hash.slice(8));
+      const selected = document.querySelector(".case-tabs [aria-selected=true]");
+      selected?.scrollIntoView({block:"nearest"});
+    }
+  } else if (name === "shelf" || name === "workspace") {
+    document.getElementById(name === "shelf" ? "shelf-perch" : "perch")?.append(pet.companion);
+    if (name === "shelf" && celebrate) pet.happy();
+  }
   if (award) {
     const details = /** @type {HTMLDetailsElement} */ (
       document.getElementById("award-" + award.id)
@@ -85,7 +131,10 @@ function route(celebrate = true) {
   }
 }
 function navigate(name) {
-  if (location.hash === "#" + name) route();
+  if (name === "hub") {
+    if (location.hash) history.pushState(null, "", location.pathname + location.search);
+    route();
+  } else if (location.hash === "#" + name) route();
   else location.hash = name;
 }
 function showDialog(title, html) {
@@ -181,22 +230,9 @@ document.addEventListener("click", async (e) => {
   } else if (data.engine) command(data.engine);
   else if (btn.hasAttribute("data-help")) help();
   else if (data.trophy) navigate("award-" + data.trophy);
-  else if (btn.getAttribute("role") === "tab")
+  else if (viewTabs.contains(btn) && btn.getAttribute("role") === "tab")
     navigate(btn.getAttribute("aria-controls"));
-  else if (btn.hasAttribute("data-copy") && portfolioUrl) {
-    try {
-      await navigator.clipboard.writeText(portfolioUrl);
-      btn.textContent = "Link copied";
-    } catch {
-      showDialog(
-        "Portfolio link",
-        '<input aria-label="Portfolio URL" readonly>',
-      );
-      const field = dialog.querySelector("input");
-      field.value = portfolioUrl;
-      field.select();
-    }
-  } else if (btn.id === "classic-play" || btn.id === "classic-reset") {
+  else if (btn.id === "classic-play" || btn.id === "classic-reset") {
     const t = classicTimer(),
       now = Date.now(),
       left = t.end ? Math.max(0, Math.ceil((t.end - now) / 1000)) : t.remaining;
@@ -225,18 +261,14 @@ dialog.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if (!(e.target instanceof Element)) return;
   if (
-    e.target.closest("[role=tablist]") &&
+    viewTabs.contains(e.target) &&
     ["ArrowLeft", "ArrowRight", "Home", "End"].includes(e.key)
   ) {
     e.preventDefault();
-    const id =
-      e.key === "Home"
-        ? "workspace"
-        : e.key === "End"
-          ? "shelf"
-          : workspacePanel.hidden
-            ? "workspace"
-            : "shelf";
+    const tabs = [...viewTabs.querySelectorAll("button:not([hidden])")];
+    const index = tabs.findIndex(tab => tab === e.target);
+    const next = {Home:0, End:tabs.length-1, ArrowLeft:index-1, ArrowRight:index+1}[e.key];
+    const id = tabs[(next + tabs.length) % tabs.length].getAttribute("aria-controls");
     document.getElementById("tab-" + id).focus();
     navigate(id);
   } else if (
@@ -253,6 +285,10 @@ document.addEventListener("keydown", (e) => {
     query().value = "/";
     pet.think();
   }
+});
+document.addEventListener("click", e => {
+  if (e.defaultPrevented || e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || !(e.target instanceof Element)) return;
+  if (e.target.closest('a[href="/"]')) { e.preventDefault(); navigate("hub"); }
 });
 window.addEventListener("hashchange", () => route());
 const format = new Intl.DateTimeFormat("en-GB", {

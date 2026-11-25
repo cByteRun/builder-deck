@@ -2,7 +2,7 @@ import { icon } from "./icons.js";
 
 import { earnUrl, trophies } from "../data/profile.js";
 import { brandMark } from "./achievement-art.js";
-const platforms = [
+export const platforms = [
   [
     "github",
     "#E6EDF3",

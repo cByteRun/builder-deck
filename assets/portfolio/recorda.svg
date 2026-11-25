@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 222" class="bond-art" role="img" aria-label="An exploded isometric stack of copper bond certificates on a ledger">
+<defs>
+ <linearGradient id="copper" x2="1" y2=".85" gradientUnits="objectBoundingBox"><stop stop-color="#f7bf92"/><stop offset=".4" stop-color="#c97951"/><stop offset="1" stop-color="#793d32"/></linearGradient>
+ <linearGradient id="side"><stop stop-color="#4c2723"/><stop offset=".45" stop-color="#aa6043"/><stop offset="1" stop-color="#542d26"/></linearGradient>
+ <linearGradient id="glass" x2=".8" y2="1"><stop stop-color="#b77e61" stop-opacity=".55"/><stop offset="1" stop-color="#352623" stop-opacity=".92"/></linearGradient>
+ <pattern id="floor" width="31" height="18" patternUnits="userSpaceOnUse"><path d="m0 0 31 18m0-18L0 18" stroke="#ca9373" stroke-opacity=".18" stroke-width=".6"/></pattern>
+ <pattern id="etch" width="4" height="4" patternUnits="userSpaceOnUse"><path d="m0 4 4-4" stroke="#5c3829" opacity=".3" stroke-width=".7"/></pattern>
+ <g id="plate"><path d="m60 79 153-63 130 63-153 70z" fill="url(#glass)" stroke="#d39c77" stroke-width="1.3"/><path d="m60 79 130 70 153-70v7l-153 70L60 86Z" fill="url(#side)" stroke="#d49372" stroke-width=".7"/></g>
+</defs>
+<path d="M8 120 219 26l173 76v39L184 221 8 153Z" fill="url(#floor)"/>
+<g fill="none" stroke="#c9815b" stroke-width=".8" opacity=".7"><path d="m22 153 130 63 181-82m-295-6L196 59l180 77m-20-24 23-11m-255 97-22 10"/><path d="M55 92v61m290-58v60m-157-19v69" stroke-dasharray="2 4"/></g>
+<use href="#plate" y="42"/><use href="#plate" y="28"/><use href="#plate" y="14"/>
+<g class="topbond"><path d="m60 78 154-64 130 64-154 71Z" fill="url(#copper)" stroke="#f1bb91" stroke-width="1.5"/><path d="m60 78 130 71 154-71v5l-154 72L60 83Z" fill="url(#side)" stroke="#ca875f"/>
+<g transform="matrix(1.02 -.43 1.03 .535 70 78)" fill="none" stroke="#643c2c">
+ <rect width="140" height="116" rx="2" fill="url(#etch)"/><rect x="3" y="3" width="134" height="110" rx="3"/><rect x="7" y="7" width="126" height="102" rx="2" stroke-width=".7"/>
+ <path d="M14 23h84m-84 5h57m-57 51h60m-60 5h80m-80 5h50m-50 9h25m6 0h19"/><path d="M16 61V38h9q16 0 12 9-2 5-10 5l13 10h-9L20 52v9z" fill="#61392a" stroke="none"/>
+ <g transform="translate(103 76)"><circle r="20"/><circle r="16" stroke-dasharray="1 2" stroke-width="3"/><circle r="12"/><path d="m-6 0 4 5 9-11" stroke-width="3"/></g>
+ <path d="M112 17h10m-10 4h10m-10 4h10"/></g></g>
+<g fill="#dfa57f"><circle cx="22" cy="153" r="2"/><circle cx="333" cy="134" r="2"/><circle cx="379" cy="101" r="2"/></g>
+</svg>
