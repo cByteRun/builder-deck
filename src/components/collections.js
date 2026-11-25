@@ -1,137 +1,23 @@
-import { art, icon } from "./icons.js";
-import { pet } from "./terminal.js";
-import { credentials, decals, nameOf } from "../data/profile.js";
-function pagehead(k, title, desc) {
-  return (
-    '<div class="pagehead"><div class="eyebrow">' +
-    icon(k) +
-    " " +
-    (k === "shelf" ? "Personal collection" : "Developer studio") +
-    "</div><h1>" +
-    title +
-    "</h1><p>" +
-    desc +
-    "</p></div>"
-  );
+import { trophies, portfolioUrl } from "../data/profile.js";
+import { icon, art } from "./icons.js";
+function trophyArt(t) {
+  if (["hack", "sol", "decent"].includes(t.id)) return art(t.id);
+  return `<svg viewBox="0 0 70 70" class="medal" aria-hidden="true"><path d="m17 36 10 2 8 8-11 20-3-9-11 2zm36 0-10 2-8 8 11 20 3-9 11 2z" fill="currentColor" opacity=".65"/><path d="m35 4 6 3 7 1 4 6 6 4v7l3 6-4 6-2 6-7 3-5 5-8-1-7 1-6-5-7-3-2-6-4-6 3-6v-7l6-4 4-6 7-1z" fill="currentColor"/><circle cx="35" cy="27" r="16" fill="#27221f"/><text x="35" y="33" text-anchor="middle" font-family="monospace" font-size="18" fill="currentColor">${t.mark}</text></svg>`;
 }
-function shelf() {
-  return (
-    '<section class="page">' +
-    pagehead(
-      "shelf",
-      "Builder <em>trophy shelf.</em>",
-      "Daniil Tkachev’s hackathon credentials and engineering tracks.",
-    ) +
-    '<div class="shelf">' +
-    Object.entries(credentials)
+export function shelf() {
+  return `<div class="shelf-inner"><div class="shelf-head"><h1>Trophy <em>Shelf.</em></h1><div id="shelf-perch"></div></div>
+    <div class="trophy-grid">${trophies
       .map(
-        ([k, c]) =>
-          '<button class="tile" data-detail="' +
-          k +
-          '"><div class="displayart">' +
-          art(k) +
-          '</div><div class="tileinfo"><span class="unit">' +
-          c.track +
-          "</span><h2>" +
-          c.name +
-          "</h2><p>" +
-          c.text +
-          "</p>" +
-          (c.serial ? '<span class="serial">' + c.serial + "</span>" : "") +
-          "</div></button>",
+        (
+          t,
+        ) => `<details class="trophy" id="award-${t.id}" style="--shade:${t.color}"><summary>
+      <span class="trophy-art">${trophyArt(t)}</span><span class="award-copy"><strong>${t.name}</strong><span>${t.result}</span></span>
+      <span class="expand" aria-hidden="true">+</span></summary><p>${t.detail}</p></details>`,
       )
-      .join("") +
-    "</div></section>"
-  );
+      .join("")}</div>
+    <article class="portfolio"><div class="orbit" aria-hidden="true"><svg viewBox="0 0 200 200" fill="none" stroke="currentColor"><g transform="rotate(-24 100 100)"><circle cx="100" cy="100" r="73"/><ellipse cx="100" cy="100" rx="34" ry="73"/><ellipse cx="100" cy="100" rx="59" ry="73"/><ellipse cx="100" cy="100" rx="73" ry="23"/><path d="M27 100h146m-73-73v146"/><ellipse cx="100" cy="100" rx="97" ry="18" transform="rotate(-16 100 100)" stroke-width="2"/></g></svg></div>
+    <div class="folio-content"><span class="eyebrow">Public portfolio</span><h2>Proof of <em>work.</em></h2>
+    <p>Recorda · $250+ earned · 1st at AI Fest · 5 years of experience</p>
+    <p>GitHub activity and the “Ask AI about me” dossier.</p>
+    <div class="folio-actions">${portfolioUrl ? `<a href="${portfolioUrl}" target="_blank" rel="noopener">Open portfolio ↗</a><button data-copy>${icon("copy")} Copy link</button>` : '<span class="coming"><i></i> Portfolio coming soon</span><a class="github" href="https://github.com/cByteRun" target="_blank" rel="noopener">View GitHub ↗</a>'}</div></div></article></div>`;
 }
-const swatches = [
-  "accent-hover",
-  "surface-raised",
-  "bg-primary",
-  "bg-secondary",
-  "bg-card",
-  "text-primary",
-  "text-secondary",
-  "border-subtle",
-  "accent-terracotta",
-  "accent-terracotta-soft",
-  "accent-solana-purple",
-  "accent-solana-green",
-  "accent-kazakh-gold",
-  "accent-kazakh-cyan",
-];
-function tokens() {
-  return (
-    '<section class="page">' +
-    pagehead(
-      "tokens",
-      "Tokens <em>& sprites.</em>",
-      "The palette, type and pixel art behind Builder Deck.",
-    ) +
-    '<div class="sectionhead"><h2>Color system</h2><span class="unit">' +
-    document.documentElement.dataset.theme +
-    ' theme</span></div><div class="palette">' +
-    swatches
-      .map(
-        (x) =>
-          '<div class="swatch"><i style="background:var(--' +
-          x +
-          ')"></i><b>' +
-          x.replace(/^accent-/, "") +
-          "</b><small>" +
-          getComputedStyle(document.documentElement)
-            .getPropertyValue("--" + x)
-            .trim() +
-          "</small></div>",
-      )
-      .join("") +
-    '</div><div class="sectionhead"><h2>Typography</h2></div><div class="types">' +
-    [
-      ["Instrument Serif", "Builder Deck", 36],
-      ["Inter", "Interface", 22],
-      ["JetBrains Mono", "> terminal", 16],
-      ["Silkscreen", "PIXELS", 14],
-    ]
-      .map(
-        ([f, t, n]) =>
-          "<span><b style=\"font-family:'" +
-          f +
-          "';font-size:" +
-          n +
-          'px">' +
-          t +
-          "</b><small>" +
-          f +
-          " · " +
-          n +
-          " px</small></span>",
-      )
-      .join("") +
-    '</div><div class="sectionhead"><h2>Companions</h2><span class="unit" id="labstate">idle</span></div><div class="playground">' +
-    pet() +
-    pet("cat") +
-    '<span class="bubble">ready to vibe code, Daniil...</span><div class="petcontrols">' +
-    ["idle", "typing", "pet", "hover"]
-      .map(
-        (x) =>
-          '<button class="tool" data-trigger="' + x + '">' + x + "</button>",
-      )
-      .join("") +
-    '</div></div><div class="sectionhead"><h2>Sticker sheet</h2></div><div class="gallery">' +
-    Object.keys({ ...credentials, ...decals })
-      .map(
-        (k) =>
-          '<button class="specimen" data-detail="' +
-          k +
-          '">' +
-          art(k) +
-          "<small>" +
-          nameOf(k).replaceAll(">", "&gt;") +
-          "</small></button>",
-      )
-      .join("") +
-    "</div></section>"
-  );
-}
-
-export { pagehead, shelf, tokens };

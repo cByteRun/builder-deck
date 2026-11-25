@@ -1,54 +1,29 @@
-import { art, icon } from "./icons.js";
+import { icon } from "./icons.js";
 import { prefixes } from "../data/search.js";
-import { credentials } from "../data/profile.js";
-function pet(kind = "crab") {
-  return (
-    '<button class="pet" data-pet="' +
-    kind +
-    '" aria-label="Pet ' +
-    (kind === "crab" ? "Claude the crab" : "Codex the cat") +
-    '">' +
-    art(kind) +
-    "</button>"
-  );
-}
-function terminal() {
-  return (
-    '<div class="terminal"><div class="companion">' +
-    pet() +
-    '<span class="bubble">ready to vibe code, Daniil...</span></div><form id="search"><label class="prompt" for="query">❯</label><input id="query" autocomplete="off" spellcheck="false" aria-label="Search or enter a slash command"><button class="submit" title="Run search or command" aria-label="Run search or command">' +
-    icon("enter") +
-    '</button></form><div class="engines">' +
-    prefixes
-      .map(
-        (x) =>
-          '<button class="engine" data-engine="' + x + '">/' + x + "</button>",
-      )
-      .join("") +
-    '<button class="helpkey" title="Command palette" data-help>/help</button></div></div>'
-  );
-}
-function pills() {
-  return (
-    '<div class="deck"><div class="rule">' +
-    icon("check") +
-    'Verified Builder Deck</div><div class="creds">' +
-    Object.entries(credentials)
-      .map(
-        ([k, c]) =>
-          '<button class="cred" data-detail="' +
-          k +
-          '"><i style="--shade:' +
-          c.color +
-          '">' +
-          c.mark +
-          "</i>" +
-          c.name +
-          "</button>",
-      )
-      .join("") +
-    "</div></div>"
-  );
-}
+import { badgeOrder, trophies } from "../data/profile.js";
+import { shortcutRow } from "./shortcuts.js";
+import { stickers } from "./stickers.js";
 
-export { pet, terminal, pills };
+export function workspace(theme) {
+  const badges = badgeOrder
+    .map((id) => {
+      const t = trophies.find((item) => item.id === id);
+      return `<button class="badge" data-trophy="${id}"><i style="color:${t.color}">${t.mark}</i>${t.name}</button>`;
+    })
+    .join("");
+  return `<div class="board hybrid"><div class="canvas-corners" aria-hidden="true"></div>${stickers()}
+    <div class="hero">
+      <div class="eyebrow"><i></i>${theme.eyebrow}</div>
+      <h1>${theme.greeting}</h1>
+      <p class="subtitle">Full-Stack Software Engineer <span>·</span> Pavlodar, KZ</p>
+      <div class="command-stack"><div id="perch"></div>
+        <div class="terminal"><form id="search"><label class="prompt" for="query">❯</label>
+          <input id="query" aria-label="Search or enter a command" placeholder="Search the web, or type /help..." autocomplete="off" spellcheck="false">
+          <button class="submit" aria-label="Run search or command">${icon("enter")}</button></form>
+          <div class="engines">${prefixes.map((k) => `<button data-engine="${k}">/${k}</button>`).join("")}<button data-help>/help</button></div>
+        </div>
+      </div>
+      ${shortcutRow()}
+      <div class="badges" aria-label="Achievements">${badges}</div>
+    </div></div>`;
+}

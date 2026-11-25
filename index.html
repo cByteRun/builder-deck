@@ -3,26 +3,34 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#191919" />
-    <title>Daniil Tkachev · Builder Deck</title>
+    <meta name="theme-color" content="#141312" />
+    <title>SCOPE · Daniil Tkachev</title>
     <meta
       name="description"
-      content="Daniil Tkachev — Full-Stack Software Engineer in Pavlodar, Kazakhstan. Projects, hackathons and an interactive workspace in three themes."
+      content="Daniil Tkachev’s personal workspace and trophy shelf."
     />
+    <link rel="icon" href="./assets/scope.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./src/styles/fonts.css" />
-    <link rel="stylesheet" href="./src/styles/components.css" />
     <link rel="stylesheet" href="./src/themes/claude-code/tokens.css" />
-    <link rel="stylesheet" href="./src/themes/claude-code/components.css" />
     <link rel="stylesheet" href="./src/themes/vibe-v1/tokens.css" />
-    <link rel="stylesheet" href="./src/themes/vibe-v1/components.css" />
     <link rel="stylesheet" href="./src/themes/vibe-v2/tokens.css" />
+    <link rel="stylesheet" href="./src/styles/components.css" />
+    <link rel="stylesheet" href="./src/styles/pet.css" />
+    <link rel="stylesheet" href="./src/themes/claude-code/components.css" />
+    <link rel="stylesheet" href="./src/themes/vibe-v1/components.css" />
     <link rel="stylesheet" href="./src/themes/vibe-v2/components.css" />
   </head>
   <body>
     <header class="mast">
-      <div class="brand">
-        <span class="logo" data-icon="brand"></span><strong>Builder Deck</strong
-        ><span class="divline"></span
+      <div class="identity">
+        <a class="wordmark" href="#workspace" aria-label="SCOPE workspace"
+          ><img
+            src="./assets/scope.svg"
+            width="32"
+            height="32"
+            alt=""
+          />SCOPE</a
+        ><span class="divider"></span
         ><a
           class="profile-link"
           href="https://github.com/cByteRun"
@@ -31,60 +39,58 @@
           >Daniil Tkachev ↗</a
         >
       </div>
-      <div class="user">
-        <span class="clock"
-          ><i class="dot"></i><span id="clock"></span>
-          <span class="tz">ALMT</span></span
-        ><button
-          id="appearance"
-          class="themebtn"
-          aria-label="Theme Admin / Toggle Theme"
-          aria-haspopup="dialog"
-        ></button
-        ><span class="avatar" title="Studio 01">01</span>
+      <div class="tools">
+        <span class="clock"><i></i><time id="clock"></time> ALMT</span
+        ><button id="appearance" aria-haspopup="dialog">
+          <span data-icon="moon"></span>Theme
+        </button>
       </div>
     </header>
-    <main id="main" role="tabpanel" tabindex="-1"></main>
+    <main>
+      <section
+        id="workspace"
+        role="tabpanel"
+        aria-labelledby="tab-workspace"
+      ></section>
+      <section
+        id="shelf"
+        role="tabpanel"
+        aria-labelledby="tab-shelf"
+        hidden
+      ></section>
+    </main>
     <footer>
-      <nav
-        class="dock"
-        role="tablist"
-        aria-label="Studio views"
-        id="dock"
-      ></nav>
-      <div class="status">
-        <div>
-          <span class="status-prompt">❯</span> builder-deck
-          <span class="muted">/</span> <span id="status-mode">hybrid</span>
-        </div>
+      <span class="hint"
+        ><span data-icon="hand"></span>Drag stickers · double-click to
+        rotate</span
+      >
+      <nav class="dock" role="tablist" aria-label="Views">
         <button
-          class="cat-lane"
-          data-pet="cat"
-          aria-label="Pet Codex the cat"
-        ></button>
-        <div class="online">
-          <i class="dot"></i><span id="state-label">idle</span
-          ><span class="divline"></span><span>LOCAL SESSION</span>
-        </div>
-      </div>
+          role="tab"
+          id="tab-workspace"
+          aria-controls="workspace"
+          aria-selected="true"
+        >
+          <span data-icon="terminal"></span>Workspace
+        </button>
+        <button
+          role="tab"
+          id="tab-shelf"
+          aria-controls="shelf"
+          aria-selected="false"
+          tabindex="-1"
+        >
+          <span data-icon="shelf"></span>Trophy Shelf
+        </button>
+      </nav>
     </footer>
-    <dialog id="admin" aria-labelledby="admin-title">
-      <h2 id="admin-title">Theme Admin</h2>
-      <button class="closebtn" aria-label="Close Theme Admin" data-admin-close>
-        ×
-      </button>
-      <div class="admin-nav" role="group" aria-label="Admin sections">
-        <button data-admin-tab="themes">Themes</button
-        ><button data-admin-tab="export">Firefox CSS Export &amp; Setup</button>
+    <dialog id="settings" aria-labelledby="dialog-title">
+      <div class="dialog-head">
+        <h2 id="dialog-title"></h2>
+        <button data-close aria-label="Close">×</button>
       </div>
-      <div id="admin-panel"></div>
+      <div id="dialog-body"></div>
     </dialog>
-    <dialog id="detail">
-      <div id="dialog-inner"></div>
-      <button class="closebtn" aria-label="Close dialog" data-close>×</button>
-    </dialog>
-    <div id="toast" role="status"></div>
-    <div id="particles" aria-hidden="true"></div>
     <script type="module" src="./src/main.js"></script>
   </body>
 </html>

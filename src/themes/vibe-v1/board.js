@@ -44,9 +44,7 @@ function tickClassic() {
   );
 }
 function renderClassic(draft) {
-  $("#status-mode").textContent = "classic";
-  $("#main").setAttribute("aria-labelledby", "tab-hybrid");
-  $("#main").innerHTML =
+  $("#workspace").innerHTML =
     '<section class="classic-board"><a class="classic-weather" href="https://www.accuweather.com/en/kz/pavlodar/225059/weather-forecast/225059" target="_blank" rel="noopener">Pavlodar <span>Weather ↗</span></a>' +
     '<div class="classic-title" role="img" aria-label="Vibe Coding — Decentrathon Edition 6.0"></div>' +
     '<form class="classic-search" id="search"><input aria-label="Search the web" id="query" placeholder="Search the web or enter a command" autocomplete="off"><button aria-label="Search">↵</button></form>' +
@@ -60,10 +58,6 @@ function renderClassic(draft) {
     "</div></section>" +
     '<section><h2>Focus timer</h2><div class="classic-controls"><button id="classic-play" aria-label="Start timer">▶</button><output id="classic-count">25:00</output><button id="classic-reset" aria-label="Reset timer">↺</button></div></section></div><div class="classic-strip" aria-hidden="true"></div></section>';
   $("#query").value = draft;
-  $$("#dock [role=tab]").forEach((b) => {
-    b.setAttribute("aria-selected", String(b.dataset.view === "hybrid"));
-    b.tabIndex = b.dataset.view === "hybrid" ? 0 : -1;
-  });
   tickClassic();
 }
 setInterval(tickClassic, 1000);
