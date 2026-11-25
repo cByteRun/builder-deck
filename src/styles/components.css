@@ -663,6 +663,23 @@ details[open] .expand {
 .coming {
   font: 11px var(--mono);
 }
+.portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 4px 12px 4px 6px;
+  border: 1px solid color-mix(in srgb, var(--accent-terracotta) 44%, var(--border-subtle));
+  border-radius: 7px;
+  background: var(--accent-terracotta-soft);
+  color: var(--text-primary);
+}
+.portfolio-link:is(:hover, :focus-visible) {
+  border-color: var(--accent-hover);
+}
+.portfolio-link img {
+  flex: none;
+  image-rendering: pixelated;
+}
 .coming,
 .folio-actions button {
   border-radius: 5px;
