@@ -1,5 +1,4 @@
-// Set the public dossier URL when the portfolio launches.
-export const portfolioUrl = "";
+export const portfolioUrl = "https://builder-deck.vercel.app/";
 export const trophies = [
   {
     id: "hack",
