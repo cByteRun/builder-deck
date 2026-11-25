@@ -1,19 +1,19 @@
 :root,
 [data-theme="claude-code"] {
   color-scheme: dark;
-  --bg-primary: #191919;
-  --bg-secondary: #1c1b1a;
-  --bg-card: #232220;
-  --surface-raised: #262523;
-  --text-primary: #f3f1ec;
-  --text-secondary: #9a958e;
-  --faint: #78736c;
-  --border-subtle: #363431;
-  --grid: #2b2927;
+  --bg-primary: #141312;
+  --bg-secondary: #191817;
+  --bg-card: #302c29;
+  --surface-raised: #252321;
+  --text-primary: #f4f1ea;
+  --text-secondary: #b2aaa1;
+  --faint: #938a81;
+  --border-subtle: #2a2826;
+  --grid: #201e1c;
   --accent-terracotta: #d97757;
-  --accent-hover: #e58869;
-  --accent-terracotta-soft: rgba(217, 119, 87, 0.15);
-  --green: #9cb394;
-  --ink: #f3f1ec;
+  --accent-hover: #e89675;
+  --accent-terracotta-soft: #d9775714;
+  --green: #97ad8d;
+  --ink: #f4f1ea;
   --lift: 0 5px 16px #0003;
 }

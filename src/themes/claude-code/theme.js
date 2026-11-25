@@ -1,6 +1,6 @@
 export default {
   id: "claude-code",
-  name: "Claude Code — Builder Deck",
+  name: "SCOPE · Claude Code",
   greeting: "Hello, <em>Daniil.</em>",
   eyebrow: "Personal workspace",
   firefox: "claude-code",

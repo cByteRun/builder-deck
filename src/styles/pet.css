@@ -1,0 +1,122 @@
+.companion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 50px;
+}
+.pet {
+  position: relative;
+  border: 0;
+  background: none;
+  padding: 0;
+  width: 58px;
+  height: 54px;
+  cursor: pointer;
+}
+.pet svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.bubble {
+  position: relative;
+  padding: 6px 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px 8px 8px 2px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font: 10px/1.25 var(--mono);
+}
+.glint,
+.sparks,
+.zzz {
+  opacity: 0;
+}
+.zzz {
+  position: absolute;
+  right: -8px;
+  top: 0;
+  color: #e8bb91;
+  font: 12px var(--pixel);
+}
+[data-state="idle"] .sprite {
+  animation: breathe 3.8s steps(1) infinite;
+}
+[data-state="idle"] .eyes {
+  animation: glance 7s steps(1) infinite;
+}
+[data-state="thinking"] .head {
+  transform: translate(1px, 1px);
+}
+[data-state="thinking"] .glint {
+  animation: flash 1.6s steps(1) infinite;
+}
+[data-state="happy"] .sprite {
+  animation: jump 0.52s steps(4) 3;
+}
+[data-state="happy"] .sparks {
+  animation: flash 0.52s steps(1) 3;
+}
+[data-state="sleep"] .head {
+  transform: translateY(2px);
+}
+[data-state="sleep"] .visor {
+  transform: translateY(11px) scaleY(0.3);
+}
+[data-state="sleep"] .zzz {
+  opacity: 1;
+  animation: drift 2s steps(4) infinite;
+}
+@keyframes breathe {
+  50% {
+    transform: translateY(-1px);
+  }
+}
+@keyframes glance {
+  65% {
+    transform: translateX(1px);
+  }
+  72% {
+    transform: none;
+  }
+  88% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  30%,
+  70% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+}
+@keyframes jump {
+  35% {
+    transform: translateY(-4px);
+  }
+  65% {
+    transform: translateY(-2px);
+  }
+}
+@keyframes drift {
+  to {
+    transform: translate(2px, -6px);
+    opacity: 0.15;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .companion * {
+    animation: none !important;
+  }
+  [data-state="happy"] .sparks,
+  [data-state="thinking"] .glint {
+    opacity: 1;
+  }
+}

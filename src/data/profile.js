@@ -1,46 +1,53 @@
-const credentials = {
-  hack: {
+// Set the public dossier URL when the portfolio launches.
+export const portfolioUrl = "";
+export const trophies = [
+  {
+    id: "hack",
     name: "HackAlem AI",
-    track: "Guinness World Record Builder",
-    text: "Astana EXPO · A record gathering of 2,415 builders.",
+    result: "Guinness Record",
+    detail: "2,415 builders gathered at Astana EXPO.",
     mark: "✳",
-    color: "#49837a",
+    color: "#8dbba6",
   },
-  sol: {
+  {
+    id: "city",
+    name: "AI Fest · CityCom",
+    result: "1st Place",
+    detail: "CityCom took first place at AI Fest.",
+    mark: "★",
+    color: "#e2b977",
+  },
+  {
+    id: "sol",
     name: "Colosseum × KASE",
-    track: "Solana · Crypto World’s Fair",
-    text: "Tokenized bonds & RWA. Bond servicing on Solana devnet with coupons, redemption and buybacks.",
+    result: "4th Place",
+    detail: "Recorda · Tokenized bond servicing on Solana devnet.",
     mark: "≋",
-    color: "#9468ac",
+    color: "#b49acb",
   },
-  decent: {
+  {
+    id: "decent",
     name: "Decentrathon 6.0",
-    track: "Final season · 19 cities",
-    text: "Astana Hub × BAITC. A national builder season across 19 cities.",
+    result: "19 Cities",
+    detail: "A nationwide builder season with Astana Hub and BAITC.",
     mark: "ϟ",
-    color: "#926ab1",
+    color: "#cab2e4",
   },
-  sana: {
-    name: "AI-SANA",
-    track: "Stage 2 · Platonus",
-    text: "AI-SANA Stage 2 credential, recorded in Platonus.",
-    mark: "▣",
-    color: "#708049",
-  },
-  icpc: {
+  {
+    id: "icpc",
     name: "ICPC Kazakhstan",
-    track: "Competitive programming",
-    text: "Kazakhstan algorithmic programming badge.",
+    result: "Regional Contestant",
+    detail: "Competitive programming at the Kazakhstan regional contest.",
     mark: "{}",
-    color: "#b8644c",
+    color: "#df997e",
   },
-};
-const decals = {
-  coffee: "Pavlodar → Astana",
-  cli: ">_ claude --dangerously-skip-permissions",
-  think: "✻ Thinking... (42s)",
-  ship: "0 errors, 47 warnings // SHIP IT",
-};
-const nameOf = (k) => credentials[k]?.name || decals[k] || k;
-
-export { credentials, decals, nameOf };
+  {
+    id: "sana",
+    name: "AI-SANA",
+    result: "Stage 2",
+    detail: "Stage 2 credential recorded in Platonus.",
+    mark: "▣",
+    color: "#aebc80",
+  },
+];
+export const badgeOrder = ["hack", "sol", "decent", "sana", "icpc"];
