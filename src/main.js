@@ -6,7 +6,7 @@ import { workspace } from "./components/terminal.js";
 import { shelf } from "./components/collections.js";
 import { mountPortfolio } from "./portfolio/controller.js";
 import { translate } from "./portfolio/locale.js";
-import { mountStickers, stickerCanvas } from "./components/stickers.js";
+import { mountStickers } from "./components/stickers.js";
 import { themeOptions } from "./components/theme-admin.js";
 import { commands, hosts, labels, prefixes } from "./data/search.js";
 import { trophies } from "./data/profile.js";
@@ -27,7 +27,7 @@ const query = () =>
   /** @type {HTMLInputElement} */ (document.getElementById("query"));
 const main = document.querySelector("main");
 const viewTabs = document.querySelector(".dock");
-let canvasStickers, currentView, workspaceTheme;
+let currentView, workspaceTheme;
 let engine = "google",
   draft = "",
   workspaceStickers;
@@ -45,15 +45,11 @@ function renderPublicChrome(lang) {
   shelfPanel.innerHTML = shelf(lang);
   for (const id of opened) document.getElementById(id)?.setAttribute("open", "");
   if (currentView === "shelf") document.getElementById("shelf-perch").append(pet.companion);
-  canvasStickers?.destroy();
-  const bomb = document.getElementById("bomb");
-  bomb.innerHTML = stickerCanvas(tr);
-  canvasStickers = mountStickers(bomb.querySelector("#sticker-canvas"), pet.happy);
   for (const label of viewTabs.querySelectorAll("[data-label]")) label.textContent = tr(label.getAttribute("data-label"));
   document.getElementById("open-palette").setAttribute("aria-label", tr("Open command palette"));
   document.getElementById("site-language").setAttribute("aria-label", tr("Language"));
 }
-const portfolio = mountPortfolio({dialog, showDialog, navigate, onLanguage: renderPublicChrome});
+const portfolio = mountPortfolio({dialog, navigate, onLanguage: renderPublicChrome});
 mountWins();
 function setEngine(name) {
   engine = name;
@@ -94,7 +90,7 @@ function route(celebrate = true) {
   const award = trophies.find((t) => location.hash === "#award-" + t.id);
   const hash = location.hash.slice(1);
   const name = award || hash === "shelf" ? "shelf" :
-    hash === "workspace" ? "workspace" : hash === "bomb" ? "bomb" : "hub";
+    hash === "workspace" ? "workspace" : "hub";
   const changed = currentView !== name;
   currentView = name;
   document.body.dataset.view = name;
@@ -102,20 +98,16 @@ function route(celebrate = true) {
     const id = tab.getAttribute("aria-controls");
     const selected = id === name;
     document.getElementById(id).hidden = !selected;
-    tab.toggleAttribute("hidden", id === "workspace" && !selected);
     tab.setAttribute("aria-selected", String(selected));
     tab.setAttribute("tabindex", selected ? "0" : "-1");
   }
-  document.title = ({hub:"Daniil Tkachev · Proof of Work Hub",workspace:"Workspace",shelf:"Trophy Shelf",bomb:"Stickerbomb"})[name] + " | Builder Deck";
+  document.title = ({hub:"Daniil Tkachev · Proof of Work Hub",workspace:"Workspace",shelf:"Trophy Shelf"})[name] + " | Builder Deck";
   if (name === "workspace") { prepareWorkspace(); workspaceStickers?.refresh(); }
-  if (name === "bomb") canvasStickers.refresh();
   if (changed) main.scrollTop = 0;
   if (name === "hub") {
     portfolio.enter();
     if (hash.startsWith("project-")) {
       portfolio.selectCase(hash.slice(8));
-      const selected = document.querySelector(".case-tabs [aria-selected=true]");
-      selected?.scrollIntoView({block:"nearest"});
     }
   } else if (name === "shelf" || name === "workspace") {
     document.getElementById(name === "shelf" ? "shelf-perch" : "perch")?.append(pet.companion);
@@ -277,6 +269,7 @@ document.addEventListener("keydown", (e) => {
     !e.altKey &&
     !e.metaKey &&
     !dialog.open &&
+    !portfolio.dialogOpen() &&
     !workspacePanel.hidden &&
     e.target !== query()
   ) {
