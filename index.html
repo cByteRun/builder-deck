@@ -63,7 +63,6 @@
     </header>
     <main>
       <section id="hub" role="tabpanel" aria-labelledby="tab-hub"><!--public-portfolio--></section>
-      <section id="bomb" role="tabpanel" aria-labelledby="tab-bomb" hidden></section>
       <section
         id="workspace" hidden
         role="tabpanel"
@@ -80,9 +79,8 @@
       <div class="view-switcher">
         <nav class="dock" role="tablist" aria-label="Views">
           <button role="tab" id="tab-hub" aria-controls="hub" aria-selected="true" tabindex="0"><span data-icon="layers"></span><span data-label="Portfolio">Portfolio</span></button>
-          <button role="tab" id="tab-workspace" aria-controls="workspace" aria-selected="false" tabindex="-1" hidden><span data-icon="terminal"></span><span data-label="Workspace">Workspace</span></button>
           <button role="tab" id="tab-shelf" aria-controls="shelf" aria-selected="false" tabindex="-1"><span data-icon="shelf"></span><span data-label="Trophy Shelf">Trophy Shelf</span></button>
-          <button role="tab" id="tab-bomb" aria-controls="bomb" aria-selected="false" tabindex="-1"><span data-icon="bomb"></span><span data-label="Stickerbomb">Stickerbomb</span></button>
+          <button role="tab" id="tab-workspace" aria-controls="workspace" aria-selected="false" tabindex="-1"><span data-icon="terminal"></span><span data-label="Workspace">Workspace</span></button>
         </nav>
         <div class="rover-lane">
           <button
@@ -99,7 +97,7 @@
         </div>
       </section>
     </footer>
-    <div id="hub-notice" role="status"></div>
+    <div id="portfolio-overlays"></div>
     <dialog id="settings" aria-labelledby="dialog-title">
       <div class="dialog-head">
         <h2 id="dialog-title"></h2>

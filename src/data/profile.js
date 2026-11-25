@@ -27,10 +27,10 @@ export const trophies = [
     identity: "https://superteam.fun/assets/logo.svg",
   },
   {
-    id: "decent", name: "Decentrathon 4.0", result: "19 Cities",
+    id: "decent", name: "Decentrathon 6.0", result: "19 Cities",
     milestone: "19-city event", detail: "A nationwide builder season with Astana Hub and BAITC.",
     color: "#98db14", pet: "Console gecko", reaction: "scurry", phrase: "19 cities synced.",
-    identity: "https://astanahub.com/account/v2/user/688521/profile/activity/",
+    identity: "https://decentrathon.ai/en",
   },
   {
     id: "sana", credential: "f42775b5-d32a-4dde-bb8e-f5b3d892738f", name: "AI-SANA", result: "Stage 2",
