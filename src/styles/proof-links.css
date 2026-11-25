@@ -102,12 +102,16 @@
   border: 1px solid color-mix(in srgb, var(--event-hue) 28%, transparent);
   border-radius: 6px;
   background: color-mix(in srgb, var(--event-hue) 10%, transparent);
-  color: #eae5dc;
+  color: color-mix(in srgb, var(--event-hue) 55%, #f4f1ea);
   font: 11px/1.5 var(--mono);
   white-space: nowrap;
   transition:
     background-color 0.16s,
     border-color 0.16s;
+}
+.win-sequence strong {
+  font-weight: 600;
+  color: color-mix(in srgb, var(--event-hue) 78%, white);
 }
 .win-separator {
   color: #a59a8f;
@@ -116,12 +120,12 @@
   border-color: color-mix(in srgb, var(--event-hue) 55%, transparent);
   background: color-mix(in srgb, var(--event-hue) 15%, transparent);
 }
-.win-mark {
+.win-sequence .achievement-mark {
   flex: none;
   width: 14px;
   height: 14px;
   color: var(--event-hue);
-  shape-rendering: crispEdges;
+
 }
 @keyframes wins-scroll {
   to {
