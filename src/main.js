@@ -61,6 +61,11 @@ function route(celebrate = true) {
   const award = trophies.find((t) => location.hash === "#award-" + t.id);
   const onShelf = location.hash === "#shelf" || Boolean(award);
   const name = onShelf ? "shelf" : "workspace";
+  document.getElementById("session-view").textContent = onShelf
+    ? "shelf"
+    : activeTheme() === "vibe-v1"
+      ? "classic"
+      : "hybrid";
   workspacePanel.hidden = onShelf;
   shelfPanel.hidden = !onShelf;
   for (const tab of document.querySelectorAll("button[role=tab]")) {

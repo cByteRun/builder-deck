@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#141312" />
-    <title>SCOPE · Daniil Tkachev</title>
+    <title>Builder Deck · Daniil Tkachev</title>
     <meta
       name="description"
       content="Daniil Tkachev’s personal workspace and trophy shelf."
     />
-    <link rel="icon" href="./assets/scope.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/builder-spark.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="./src/styles/fonts.css" />
     <link rel="stylesheet" href="./src/themes/claude-code/tokens.css" />
     <link rel="stylesheet" href="./src/themes/vibe-v1/tokens.css" />
@@ -23,13 +23,16 @@
   <body>
     <header class="mast">
       <div class="identity">
-        <a class="wordmark" href="#workspace" aria-label="SCOPE workspace"
+        <a
+          class="wordmark"
+          href="#workspace"
+          aria-label="Builder Deck workspace"
           ><img
-            src="./assets/scope.svg"
+            src="./assets/builder-spark.svg"
             width="32"
             height="32"
             alt=""
-          />SCOPE</a
+          />Builder Deck</a
         ><span class="divider"></span
         ><a
           class="profile-link"
@@ -60,29 +63,47 @@
       ></section>
     </main>
     <footer>
-      <span class="hint"
-        ><span data-icon="hand"></span>Drag stickers · double-click to
-        rotate</span
-      >
-      <nav class="dock" role="tablist" aria-label="Views">
-        <button
-          role="tab"
-          id="tab-workspace"
-          aria-controls="workspace"
-          aria-selected="true"
+      <div class="view-switcher">
+        <span class="hint"
+          ><span data-icon="hand"></span>Drag stickers · double-click to
+          rotate</span
         >
-          <span data-icon="terminal"></span>Workspace
-        </button>
-        <button
-          role="tab"
-          id="tab-shelf"
-          aria-controls="shelf"
-          aria-selected="false"
-          tabindex="-1"
+        <nav class="dock" role="tablist" aria-label="Views">
+          <button
+            role="tab"
+            id="tab-workspace"
+            aria-controls="workspace"
+            aria-selected="true"
+          >
+            <span data-icon="terminal"></span>Workspace
+          </button>
+          <button
+            role="tab"
+            id="tab-shelf"
+            aria-controls="shelf"
+            aria-selected="false"
+            tabindex="-1"
+          >
+            <span data-icon="shelf"></span>Trophy Shelf
+          </button>
+        </nav>
+      </div>
+      <div class="session-strip">
+        <span class="session-path"
+          ><b>❯</b> builder-deck <i>/</i>
+          <span id="session-view">hybrid</span></span
         >
-          <span data-icon="shelf"></span>Trophy Shelf
-        </button>
-      </nav>
+        <div class="rover-lane">
+          <button
+            id="rover"
+            class="rover"
+            aria-label="Pet the roaming cyber-cat"
+          ></button>
+        </div>
+        <span class="session-info"
+          ><i></i><span id="session-state">idle</span> · Local session</span
+        >
+      </div>
     </footer>
     <dialog id="settings" aria-labelledby="dialog-title">
       <div class="dialog-head">
