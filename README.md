@@ -33,15 +33,32 @@
 
 ## Экраны и общие инструменты
 
-| Экран или инструмент | Что доступно |
+### Portfolio
+
+На главной странице открыт кейс Recorda. В соседних вкладках можно изучить city-com и Wooppay Wallet, справа — найти проекты и победы, а через *Ask your AI* — подготовить вопросы о работе Даниила для Claude или ChatGPT. [Открыть Portfolio ↗](https://builder-deck.vercel.app/)
+
+![Portfolio с открытым кейсом Recorda, блоком Ask your AI и лентой проектов](./docs/screens/portfolio.webp)
+
+### Trophy Shelf
+
+У каждого из семи достижений свой пиксельный питомец. Нажмите, например, на Decentrathon 6.0, чтобы прочитать о результате, или на HackAlem AI, чтобы увидеть номер сертификата. [Открыть Trophy Shelf ↗](https://builder-deck.vercel.app/#shelf)
+
+![Trophy Shelf с семью карточками достижений и их пиксельными питомцами](./docs/screens/trophy-shelf.webp)
+
+### Workspace
+
+Моя стартовая страница для новой вкладки. В центре — командная строка и восемь быстрых ссылок. Введите `/help`, чтобы посмотреть команды, или `/gh recorda`, чтобы найти проект на GitHub. Наклейки по краям можно передвигать и поворачивать. [Открыть Workspace ↗](https://builder-deck.vercel.app/#workspace)
+
+![Workspace с приветствием Hello, Daniil, строкой поиска, быстрыми ссылками и наклейками хакатонов](./docs/screens/workspace.webp)
+
+### Общие инструменты
+
+| Инструмент | Что доступно |
 | --- | --- |
-| [Portfolio](https://builder-deck.vercel.app/) | Главная страница. Три продуктовых кейса, шесть публичных профилей, лента проектов и побед, поиск по материалам, наклейки хакатонов и Ask your AI. |
-| [Trophy Shelf](https://builder-deck.vercel.app/#shelf) | Семь карточек с пиксельными питомцами: HackAlem AI, AI Fest · CityCom, Colosseum × KASE, Superteam Earn, **Decentrathon 6.0**, AI-SANA и ICPC Kazakhstan. В раскрытой карточке видны результат, контекст и номер сертификата, если он опубликован. |
-| [Workspace](https://builder-deck.vercel.app/#workspace) | Личный стартовый экран *Hello, Daniil.* с маскотом, наклейками и командами `/claude`, `/ask`, `/gh`, `/google`, `/help`. В доке — Lichess, Teams, TeamTrack, Telegram Web, YouTube, ChatGPT, BilimClass и HireLuma. Этот URL можно указать в Firefox New Tab Override. |
-| Ctrl+K / ⌘K | Глобальная палитра ищет проекты, профили и сертификаты, копирует AI-досье и переключает экраны. Для поиска в интернете из Workspace служит строка команд над доком. |
-| EN / RU / KZ | Переключатель меняет язык портфолио и AI-досье. В редакторе досье можно выбрать язык черновика. |
-| Theme | Выбор оформления рабочего стола: Claude Code, Vibe Coding V1 и Vibe Coding V2. |
-| Recent Wins | Закреплённая внизу лента достижений с фирменными значками. При наведении прокрутка останавливается, чтобы можно было прочитать результат и перейти к подробностям. |
+| Ctrl+K / ⌘K | Найти проект, профиль или сертификат, скопировать AI-досье или перейти на другой экран. |
+| EN / RU / KZ | Сменить язык портфолио. Язык черновика AI-досье можно выбрать отдельно. |
+| Theme | Выбрать тему рабочего стола — Claude Code, Vibe Coding V1 или Vibe Coding V2. |
+| Recent Wins | Навести указатель на нижнюю ленту, чтобы остановить прокрутку и прочитать результат. |
 
 <a id="projects"></a>
 
