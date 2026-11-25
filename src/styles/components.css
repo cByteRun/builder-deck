@@ -343,10 +343,9 @@ h2 em {
   flex-direction: column;
   gap: 7px;
   padding: 10px 2px 8px;
-  border: 1px solid
-    color-mix(in srgb, var(--text-secondary) 19%, var(--border-subtle));
+  border: 1px solid #2a2826;
   border-radius: 8px;
-  background: color-mix(in srgb, var(--brand) 4%, var(--bg-secondary));
+  background: #1b1a18;
   color: var(--text-secondary);
   font: 10px/1.25 var(--mono);
   transition:
@@ -358,14 +357,22 @@ h2 em {
 .quick-link svg {
   width: 21px;
   height: 21px;
-  color: var(--brand);
+  color: #c8b9a6;
+  opacity: 0.84;
+  transition:
+    color 0.16s,
+    opacity 0.16s;
 }
 .quick-link:hover,
 .quick-link:focus-visible {
   transform: translateY(-2px);
-  border-color: color-mix(in srgb, var(--brand) 70%, var(--border-subtle));
-  color: var(--text-primary);
-  box-shadow: 0 2px 12px color-mix(in srgb, var(--brand) 12%, transparent);
+  border-color: color-mix(in srgb, var(--brand) 40%, var(--border-subtle));
+  color: #f4f1ea;
+  box-shadow: 0 2px 12px color-mix(in srgb, var(--brand) 10%, transparent);
+}
+.quick-link:is(:hover, :focus-visible) svg {
+  color: #f4f1ea;
+  opacity: 1;
 }
 .verified-heading {
   display: flex;
