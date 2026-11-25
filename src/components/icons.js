@@ -44,6 +44,7 @@ const dims = {
   crab: [60, 40],
   cat: [54, 36],
 };
+const steam = `<path d="M64 4h4v6h4v8h-4v5h-3v-8h3v-4h-4Z" fill="#a7856f" class="steam"/><path d="M84 8h4v6h4v8h-4v5h-3v-8h3v-4h-4Z" fill="#a7856f" class="steam"/><path d="M106 1h4v6h4v8h-4v5h-3v-8h3v-4h-4Z" fill="#a7856f" class="steam"/>`;
 function art(k) {
   const [w, h] = dims[k];
   return (
@@ -57,7 +58,9 @@ function art(k) {
     h +
     '" shape-rendering="crispEdges"><use href="./assets/stickers/builder-sprites.svg#art-' +
     k +
-    '"/></svg>'
+    '"/>' +
+    (k === "coffee" ? steam : "") +
+    "</svg>"
   );
 }
 

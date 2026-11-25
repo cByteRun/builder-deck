@@ -3,6 +3,7 @@ import { read, write } from "../lib/storage.js";
 import { activeTheme } from "../themes/index.js";
 
 const wide = {
+  think: [31, 12, -5],
   hack: [14, 24, -13],
   sol: [86, 22, 12],
   decent: [13, 66, -9],
@@ -11,9 +12,10 @@ const wide = {
   ship: [78, 86, -8],
 };
 const narrow = {
-  hack: [19, 8, -11],
+  think: [49, 5, -4],
+  hack: [16, 9, -11],
   sol: [81, 9, 9],
-  ship: [51, 10, -5],
+  ship: [54, 13, 5],
   decent: [17, 91, -7],
   coffee: [84, 91, 8],
   cli: [50, 91, 5],
@@ -22,6 +24,7 @@ const names = {
   hack: "HackAlem AI",
   sol: "Colosseum × KASE",
   decent: "Decentrathon 6.0",
+  think: "Thinking...",
   coffee: "Coffee",
   cli: "CLI flag",
   ship: "Ship it!",

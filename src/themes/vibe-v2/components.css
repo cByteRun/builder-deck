@@ -45,9 +45,6 @@
 [data-theme="vibe-coding"] .hybrid .sticker[data-id="ship"] svg {
   visibility: hidden;
 }
-[data-theme="vibe-coding"] .hybrid .sticker[data-id="think"] {
-  display: none;
-}
 [data-theme="vibe-coding"] .hero h1,
 [data-theme="vibe-coding"] .hero h1 em {
   font: normal clamp(36px, 3.8vw, 68px) / 1 var(--pixel);

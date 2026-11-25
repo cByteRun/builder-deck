@@ -24,6 +24,7 @@ export function workspace(theme) {
         </div>
       </div>
       ${shortcutRow()}
+      <div class="verified-heading">${icon("check")} Verified Builder Deck</div>
       <div class="badges" aria-label="Achievements">${badges}</div>
     </div></div>`;
 }
