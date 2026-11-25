@@ -38,9 +38,7 @@
 }
 .proof-links strong {
   display: block;
-  font:
-    550 12px/1.25 Inter,
-    sans-serif;
+  font: 400 12px/1.35 var(--font-mono);
 }
 .proof-links a > span {
   min-width: 0;
@@ -49,7 +47,7 @@
   display: block;
   margin-top: 4px;
   color: var(--text-secondary);
-  font: 11px/1.4 var(--mono);
+  font: 11px/1.4 var(--font-mono);
   overflow-wrap: anywhere;
 }
 .wins-bar {
@@ -66,7 +64,7 @@
   color: #d97757;
   padding-inline-end: clamp(8px, 1.1vw, 18px);
   border-inline-end: 1px solid var(--border-subtle);
-  font: 600 10px/20px var(--mono);
+  font: 600 10px/20px var(--font-mono);
   letter-spacing: 0.09em;
 }
 .wins-window {
@@ -102,12 +100,16 @@
   border: 1px solid color-mix(in srgb, var(--event-hue) 28%, transparent);
   border-radius: 6px;
   background: color-mix(in srgb, var(--event-hue) 10%, transparent);
-  color: #eae5dc;
-  font: 11px/1.5 var(--mono);
+  color: color-mix(in srgb, var(--event-hue) 55%, #f4f1ea);
+  font: 11px/1.5 var(--font-mono);
   white-space: nowrap;
   transition:
     background-color 0.16s,
     border-color 0.16s;
+}
+.win-sequence strong {
+  font-weight: 400;
+  color: color-mix(in srgb, var(--event-hue) 78%, white);
 }
 .win-separator {
   color: #a59a8f;
@@ -116,12 +118,12 @@
   border-color: color-mix(in srgb, var(--event-hue) 55%, transparent);
   background: color-mix(in srgb, var(--event-hue) 15%, transparent);
 }
-.win-mark {
+.win-sequence .achievement-mark {
   flex: none;
   width: 14px;
   height: 14px;
   color: var(--event-hue);
-  shape-rendering: crispEdges;
+
 }
 @keyframes wins-scroll {
   to {

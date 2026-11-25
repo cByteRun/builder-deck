@@ -1,0 +1,125 @@
+.achievement-mark {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  flex: none;
+  vertical-align: middle;
+}
+.achievement-pet {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  transform-origin: 50% 85%;
+  animation: pet-breathe 4.8s ease-in-out infinite;
+}
+.pet-group {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+}
+.pet-group--sky {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -22%);
+  pointer-events: none;
+}
+.pet-group--sky .pet-perch:nth-child(3) { margin-left: 180px; }
+.command-perch {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+}
+.pet-group--rail {
+  margin-right: 17px;
+  gap: 7px;
+}
+.pet-perch {
+  width: 36px;
+  display: block;
+  position: relative;
+  pointer-events: auto;
+  border-radius: 3px;
+  text-decoration: none;
+  color: var(--shade);
+}
+.pet-perch::after {
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 4px;
+  background: linear-gradient(90deg, transparent, color-mix(in srgb, var(--shade) 55%, transparent), transparent);
+}
+.pet-perch:nth-child(2n) .achievement-pet { animation-delay: -2s; }
+.pet-perch:nth-child(3n) .achievement-pet { animation-delay: -3.5s; }
+.pet-whisper {
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  bottom: calc(100% + 3px);
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--bg-secondary);
+  border: 1px solid color-mix(in srgb, var(--shade) 48%, var(--border-subtle));
+  color: var(--text-primary);
+  font: 400 14px/1.2 var(--font-pixel);
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+}
+.pet-perch:is(:hover, :focus-visible) .pet-whisper { opacity: 1; }
+.award-copy strong {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.trophy-art {
+  width: 56px;
+  border-radius: 6px;
+  background: radial-gradient(ellipse at 50% 67%, color-mix(in srgb, var(--shade) 13%, transparent), transparent 74%);
+}
+.trophy-art .achievement-pet { width: 56px; height: 48px; }
+.trophy[open] .pet-caption {
+  display: block;
+  margin-top: 6px;
+  font: 400 14px/1.25 var(--font-pixel);
+  color: color-mix(in srgb, var(--shade) 66%, var(--text-primary));
+}
+[data-reaction="ripple"] { --gesture: gill-wave; }
+[data-reaction="wingbeat"] { --gesture: wingbeat; }
+[data-reaction="pounce"] { --gesture: fox-pounce; }
+[data-reaction="flutter"] { --gesture: moth-flutter; }
+[data-reaction="scurry"] { --gesture: gecko-scurry; }
+[data-reaction="glide"] { --gesture: crane-glide; }
+[data-reaction="bounce"] { --gesture: balloon-hop; }
+.pet-perch:is(:hover, :focus-visible, :active) .achievement-pet,
+.trophy summary:is(:hover, :focus-visible) .achievement-pet,
+.trophy[open] .achievement-pet {
+  animation: var(--gesture) .68s ease-in-out both;
+}
+@keyframes pet-breathe { 50% { transform: translateY(-1px); } }
+@keyframes gill-wave { 25%, 65% { transform: rotate(-7deg); } 45%, 80% { transform: rotate(5deg); } }
+@keyframes wingbeat { 25%, 65% { transform: translateY(-4px) scale(1.12, .92); } }
+@keyframes fox-pounce { 20% { transform: scale(1.1, .88); } 55% { transform: translate(4px, -5px) rotate(5deg); } }
+@keyframes moth-flutter { 20%, 60% { transform: translateY(-4px) scaleX(.7); } 40%, 80% { transform: translateY(-5px) scaleX(1.1); } }
+@keyframes gecko-scurry { 25% { transform: translateX(-3px) rotate(-5deg); } 60% { transform: translateX(4px) rotate(3deg); } }
+@keyframes crane-glide { 55% { transform: translate(3px, -6px) rotate(-7deg); } }
+@keyframes balloon-hop { 40% { transform: translateY(-7px); } 76% { transform: translateY(-2px); } }
+@media (max-width: 1100px), (max-height: 740px) {
+  .pet-perch { width: 28px; }
+  .pet-group { gap: 5px; }
+}
+@media (max-width: 760px) {
+  .pet-group--sky { display: none; }
+}
+@media (max-width: 580px) {
+  .pet-group--rail { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .achievement-pet,
+  .pet-perch:is(:hover, :focus-visible, :active) .achievement-pet,
+  .trophy summary:is(:hover, :focus-visible) .achievement-pet,
+  .trophy[open] .achievement-pet { animation: none; }
+}
