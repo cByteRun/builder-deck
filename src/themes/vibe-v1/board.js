@@ -37,7 +37,7 @@ function tickClassic() {
     String(Math.floor(secs / 60)).padStart(2, "0") +
     ":" +
     String(secs % 60).padStart(2, "0");
-  $("#classic-play").textContent = t.end && secs ? "Ⅱ" : "▶";
+  $("#classic-play").textContent = t.end && secs ? "Pause" : "Start";
   $("#classic-play").setAttribute(
     "aria-label",
     t.end && secs ? "Pause timer" : "Start timer",
@@ -56,7 +56,7 @@ function renderClassic(draft) {
       )
       .join("") +
     "</div></section>" +
-    '<section><h2>Focus timer</h2><div class="classic-controls"><button id="classic-play" aria-label="Start timer">▶</button><output id="classic-count">25:00</output><button id="classic-reset" aria-label="Reset timer">↺</button></div></section></div><div class="classic-strip" aria-hidden="true"></div></section>';
+    '<section><h2>Focus timer</h2><div class="classic-controls"><button id="classic-play" aria-label="Start timer">Start</button><output id="classic-count">25:00</output><button id="classic-reset" aria-label="Reset timer">↺</button></div></section></div><div class="classic-strip" aria-hidden="true"></div></section>';
   $("#query").value = draft;
   tickClassic();
 }

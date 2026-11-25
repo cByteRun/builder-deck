@@ -84,6 +84,9 @@ input:focus-visible {
   gap: 9px;
 }
 .wordmark img {
+  border: 1px solid #925750;
+  border-radius: 8px;
+  object-fit: cover;
   width: 29px;
   height: 29px;
 }
@@ -107,8 +110,6 @@ input:focus-visible {
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
-.clock i,
-.eyebrow i,
 .coming i {
   display: inline-block;
   width: 5px;
@@ -116,9 +117,20 @@ input:focus-visible {
   border-radius: 100%;
   background: var(--accent-terracotta);
 }
-.clock i {
-  background: var(--green);
-  margin-right: 2px;
+.clock {
+  padding: 7px 9px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 7px;
+  box-shadow: inset 0 1px 3px #0002;
+}
+.clock time {
+  color: var(--text-primary);
+  font-weight: 550;
+}
+.zone {
+  color: var(--text-secondary);
+  font-size: 0.88em;
 }
 #appearance {
   background: var(--bg-secondary);
@@ -144,7 +156,7 @@ main {
   background-image:
     linear-gradient(90deg, var(--grid) 1px, transparent 1px),
     linear-gradient(var(--grid) 1px, transparent 1px);
-  background-size: 40px 40px;
+  background-size: 30px 30px;
   background-position: center;
 }
 .board {
@@ -152,20 +164,20 @@ main {
   isolation: isolate;
   overflow: hidden;
   flex: 1;
-  min-height: 570px;
+  min-height: 495px;
   display: grid;
   place-items: center;
-  padding: 38px 0;
+  padding: 20px 0;
 }
 .board:before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 10% 17%;
   z-index: -1;
   background: radial-gradient(
-    ellipse 57% 74% at center,
-    var(--bg-primary) 9%,
-    transparent 100%
+    ellipse at center,
+    color-mix(in srgb, var(--bg-primary) 50%, transparent) 27%,
+    transparent 74%
   );
   pointer-events: none;
 }
@@ -186,7 +198,7 @@ main {
   background-repeat: no-repeat;
 }
 .hero {
-  width: min(600px, 60%);
+  width: min(60%, 740px);
   text-align: center;
   position: relative;
   z-index: 1;
@@ -228,6 +240,7 @@ h2 em {
   color: var(--accent-terracotta);
 }
 .command-stack {
+  max-width: 590px;
   margin: 22px auto 0;
 }
 #perch {
@@ -314,8 +327,9 @@ h2 em {
 .quick-access {
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
-  gap: 5px;
-  margin: 24px auto 0;
+  max-width: 650px;
+  gap: 6px;
+  margin: 16px auto 0;
 }
 .quick-link {
   min-width: 0;
@@ -489,48 +503,17 @@ footer {
   background: var(--bg-primary);
   flex: none;
 }
-.session-strip {
-  height: 36px;
-  padding: 0 clamp(12px, 3.2vw, 60px);
-  display: grid;
-  grid-template-columns: auto minmax(42px, 1fr) auto;
-  align-items: center;
-  gap: clamp(5px, 2vw, 28px);
-  border-top: 1px solid var(--border-subtle);
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
-  font: 10px/1 var(--mono);
-}
-.session-path,
-.session-info {
-  white-space: nowrap;
-}
-.session-path b {
-  color: var(--accent-terracotta);
-}
-.session-path i {
-  color: var(--faint);
-  font-style: normal;
-}
-.session-info {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  text-transform: uppercase;
-}
-.session-info i {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--green);
-}
 .view-switcher {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
   min-height: 52px;
   justify-content: center;
   border-top: 1px solid var(--border-subtle);
   position: relative;
 }
 .dock {
+  grid-column: 2;
   display: inline-flex;
   align-items: center;
   gap: 2px;
@@ -557,18 +540,6 @@ footer {
 }
 .dock button[aria-selected="true"] svg {
   color: currentColor;
-}
-.hint {
-  position: absolute;
-  left: clamp(16px, 3.2vw, 60px);
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  font: 10px var(--mono);
-  color: var(--faint);
-}
-.hint .ui {
-  width: 13px;
 }
 .shelf-inner {
   width: min(1100px, 100%);
@@ -764,9 +735,7 @@ dialog::backdrop {
   .hero {
     width: 670px;
   }
-  .board {
-    background-size: 48px 48px;
-  }
+
   .command-stack {
     margin-top: 32px;
   }
@@ -795,11 +764,6 @@ dialog::backdrop {
   .sticker[data-id="cli"] {
     width: 98px;
   }
-  .hint {
-    font-size: 9px;
-    max-width: 20%;
-    line-height: 1.4;
-  }
   .trophy-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -826,7 +790,6 @@ dialog::backdrop {
     width: 23px;
     height: 23px;
   }
-  .clock i,
   .divider {
     display: none;
   }
@@ -862,17 +825,6 @@ dialog::backdrop {
   }
   .canvas-corners {
     inset: 9px;
-  }
-  .hint {
-    display: none;
-  }
-  .session-strip {
-    font-size: 8px;
-    padding-inline: 9px;
-    gap: 6px;
-  }
-  .session-info {
-    gap: 3px;
   }
   .view-switcher {
     min-height: 50px;
@@ -932,5 +884,68 @@ dialog::backdrop {
   * {
     scroll-behavior: auto !important;
     transition: none !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero .quick-access {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    max-width: 495px;
+  }
+  .hero .quick-link {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 4px;
+  }
+}
+@media (max-width: 520px) {
+  .clock .offset {
+    display: none;
+  }
+  .dock button {
+    padding-inline: 10px;
+  }
+  .hero .quick-link {
+    flex-direction: column;
+  }
+}
+@media (min-width: 941px) and (max-height: 800px) {
+  .mast {
+    height: 52px;
+  }
+  .hero h1 {
+    font-size: clamp(60px, 5.6vw, 82px);
+    margin: 8px 0;
+  }
+  .hero > .eyebrow {
+    padding-block: 4px;
+  }
+  #perch .pet {
+    width: 60px;
+    height: 54px;
+  }
+  #perch .companion {
+    min-height: 54px;
+  }
+  .hero .quick-access {
+    margin-top: 12px;
+  }
+  .hero .quick-link {
+    font-size: 9px;
+    padding-block: 7px;
+  }
+  .verified-heading {
+    margin-top: 12px;
+  }
+  .view-switcher {
+    min-height: 46px;
+  }
+  .board {
+    min-height: 0;
+    padding: 10px 0;
+  }
+  .command-stack {
+    margin-top: 10px;
   }
 }

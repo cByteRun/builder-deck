@@ -7,7 +7,6 @@ export function makePet() {
   const bubble = companion.querySelector(".bubble");
   const rover = document.getElementById("rover");
   rover.innerHTML = `<span class="facing"><span class="hop">${roverSprite}</span></span>`;
-  const status = document.getElementById("session-state");
   const phrases = [
     "commit looks good.",
     "one pixel closer.",
@@ -24,7 +23,6 @@ export function makePet() {
   function show(state, words) {
     companion.dataset.state = state;
     rover.dataset.sleeping = String(state === "sleep");
-    status.textContent = state;
     bubble.textContent = words;
   }
   function rest() {

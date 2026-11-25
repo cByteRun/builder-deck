@@ -1,3 +1,4 @@
+import { profileCards, mountWins } from "./components/proof-links.js";
 import { read, write } from "./lib/storage.js";
 import { icon } from "./components/icons.js";
 import { makePet } from "./components/pet.js";
@@ -29,6 +30,7 @@ let engine = "google",
 for (const el of document.querySelectorAll("[data-icon]"))
   el.innerHTML = icon(el.getAttribute("data-icon"));
 shelfPanel.innerHTML = shelf();
+mountWins();
 function setEngine(name) {
   engine = name;
   if (query()) query().placeholder = labels[name];
@@ -54,6 +56,7 @@ function renderTheme(id) {
       pet.happy,
     );
   }
+  workspacePanel.insertAdjacentHTML("beforeend", profileCards());
   setEngine(engine);
   route(false);
 }
@@ -61,11 +64,6 @@ function route(celebrate = true) {
   const award = trophies.find((t) => location.hash === "#award-" + t.id);
   const onShelf = location.hash === "#shelf" || Boolean(award);
   const name = onShelf ? "shelf" : "workspace";
-  document.getElementById("session-view").textContent = onShelf
-    ? "shelf"
-    : activeTheme() === "vibe-v1"
-      ? "classic"
-      : "hybrid";
   workspacePanel.hidden = onShelf;
   shelfPanel.hidden = !onShelf;
   for (const tab of document.querySelectorAll("button[role=tab]")) {
@@ -73,9 +71,6 @@ function route(celebrate = true) {
     tab.setAttribute("aria-selected", String(selected));
     tab.setAttribute("tabindex", selected ? "0" : "-1");
   }
-  document
-    .querySelector(".hint")
-    .toggleAttribute("hidden", onShelf || activeTheme() === "vibe-v1");
   document
     .getElementById(onShelf ? "shelf-perch" : "perch")
     ?.append(pet.companion);

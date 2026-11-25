@@ -13,7 +13,7 @@ export function workspace(theme) {
     .join("");
   return `<div class="board hybrid"><div class="canvas-corners" aria-hidden="true"></div>${stickers()}
     <div class="hero">
-      <div class="eyebrow"><i></i>${theme.eyebrow}</div>
+      <div class="eyebrow">${theme.eyebrow}</div>
       <h1>${theme.greeting}</h1>
       <p class="subtitle">Full-Stack Software Engineer <span>·</span> Pavlodar, KZ</p>
       <div class="command-stack"><div id="perch"></div>
