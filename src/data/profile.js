@@ -1,4 +1,4 @@
-export const portfolioUrl = "https://builder-deck.vercel.app/";
+export const portfolioUrl = "https://proof-of-work-hub.vercel.app/";
 export const trophies = [
   {
     id: "hack",
