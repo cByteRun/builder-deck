@@ -144,7 +144,9 @@
 .rover-lane {
   position: relative;
   container-type: inline-size;
-  height: 100%;
+  width: min(100%, 320px);
+  justify-self: center;
+  height: 34px;
   min-width: 0;
   --patrol: 18s;
 }

@@ -1,15 +1,15 @@
 :root,
 [data-theme="claude-code"] {
   color-scheme: dark;
-  --bg-primary: #141312;
-  --bg-secondary: #191817;
+  --bg-primary: #191919;
+  --bg-secondary: #1c1b1a;
   --bg-card: #302c29;
   --surface-raised: #252321;
   --text-primary: #f4f1ea;
   --text-secondary: #b2aaa1;
   --faint: #938a81;
-  --border-subtle: #2a2826;
-  --grid: #201e1c;
+  --border-subtle: #363431;
+  --grid: #2b2927;
   --accent-terracotta: #d97757;
   --accent-hover: #e89675;
   --accent-terracotta-soft: #d9775714;

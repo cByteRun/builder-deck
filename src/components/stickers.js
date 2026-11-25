@@ -3,7 +3,7 @@ import { read, write } from "../lib/storage.js";
 import { activeTheme } from "../themes/index.js";
 
 const wide = {
-  think: [31, 12, -5],
+  think: [22, 45, -5],
   hack: [14, 24, -13],
   sol: [86, 22, 12],
   decent: [13, 66, -9],

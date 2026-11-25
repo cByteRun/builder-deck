@@ -9,13 +9,14 @@
       name="description"
       content="Daniil Tkachev’s personal workspace and trophy shelf."
     />
-    <link rel="icon" href="./assets/builder-spark.svg" type="image/svg+xml" />
+    <link rel="icon" href="./assets/daniil-avatar.webp" type="image/webp" />
     <link rel="stylesheet" href="./src/styles/fonts.css" />
     <link rel="stylesheet" href="./src/themes/claude-code/tokens.css" />
     <link rel="stylesheet" href="./src/themes/vibe-v1/tokens.css" />
     <link rel="stylesheet" href="./src/themes/vibe-v2/tokens.css" />
     <link rel="stylesheet" href="./src/styles/components.css" />
     <link rel="stylesheet" href="./src/styles/pet.css" />
+    <link rel="stylesheet" href="./src/styles/proof-links.css" />
     <link rel="stylesheet" href="./src/themes/claude-code/components.css" />
     <link rel="stylesheet" href="./src/themes/vibe-v1/components.css" />
     <link rel="stylesheet" href="./src/themes/vibe-v2/components.css" />
@@ -28,7 +29,7 @@
           href="#workspace"
           aria-label="Builder Deck workspace"
           ><img
-            src="./assets/builder-spark.svg"
+            src="./assets/daniil-avatar.webp"
             width="32"
             height="32"
             alt=""
@@ -43,7 +44,11 @@
         >
       </div>
       <div class="tools">
-        <span class="clock"><i></i><time id="clock"></time> ALMT</span
+        <span class="clock" title="Almaty time (UTC+5)"
+          ><time id="clock"></time
+          ><span class="zone"
+            ><span class="offset">UTC+5 / </span>ALMT</span
+          ></span
         ><button id="appearance" aria-haspopup="dialog">
           <span data-icon="moon"></span>Theme
         </button>
@@ -64,10 +69,6 @@
     </main>
     <footer>
       <div class="view-switcher">
-        <span class="hint"
-          ><span data-icon="hand"></span>Drag stickers · double-click to
-          rotate</span
-        >
         <nav class="dock" role="tablist" aria-label="Views">
           <button
             role="tab"
@@ -87,12 +88,6 @@
             <span data-icon="shelf"></span>Trophy Shelf
           </button>
         </nav>
-      </div>
-      <div class="session-strip">
-        <span class="session-path"
-          ><b>❯</b> builder-deck <i>/</i>
-          <span id="session-view">hybrid</span></span
-        >
         <div class="rover-lane">
           <button
             id="rover"
@@ -100,10 +95,13 @@
             aria-label="Pet the roaming cyber-cat"
           ></button>
         </div>
-        <span class="session-info"
-          ><i></i><span id="session-state">idle</span> · Local session</span
-        >
       </div>
+      <section class="wins-bar" aria-labelledby="wins-label">
+        <span id="wins-label" class="wins-label">RECENT WINS //</span>
+        <div id="wins-window" class="wins-window">
+          <div id="wins-track" class="wins-track"></div>
+        </div>
+      </section>
     </footer>
     <dialog id="settings" aria-labelledby="dialog-title">
       <div class="dialog-head">
