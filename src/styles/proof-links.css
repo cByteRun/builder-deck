@@ -63,8 +63,10 @@
 }
 .wins-label {
   white-space: nowrap;
-  color: var(--accent-hover);
-  font: 600 10px/1.2 var(--mono);
+  color: #d97757;
+  padding-inline-end: clamp(8px, 1.1vw, 18px);
+  border-inline-end: 1px solid var(--border-subtle);
+  font: 600 10px/20px var(--mono);
   letter-spacing: 0.09em;
 }
 .wins-window {
@@ -95,28 +97,31 @@
 .win-sequence a {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  padding: 6px 10px;
-  border: 1px solid
-    color-mix(in srgb, var(--accent-terracotta) 22%, var(--border-subtle));
-  border-radius: 5px;
-  background: color-mix(
-    in srgb,
-    var(--accent-terracotta) 5%,
-    var(--bg-secondary)
-  );
-  color: var(--text-secondary);
-  font: 10px/1.25 var(--mono);
+  gap: 8px;
+  padding: 4px 10px;
+  border: 1px solid color-mix(in srgb, var(--event-hue) 28%, transparent);
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--event-hue) 10%, transparent);
+  color: #eae5dc;
+  font: 11px/1.5 var(--mono);
   white-space: nowrap;
+  transition:
+    background-color 0.16s,
+    border-color 0.16s;
+}
+.win-separator {
+  color: #a59a8f;
 }
 .win-sequence a:is(:hover, :focus-visible) {
-  color: var(--text-primary);
-  border-color: var(--accent-terracotta);
+  border-color: color-mix(in srgb, var(--event-hue) 55%, transparent);
+  background: color-mix(in srgb, var(--event-hue) 15%, transparent);
 }
-.win-sequence .ui {
-  width: 13px;
-  height: 13px;
-  color: var(--accent-terracotta);
+.win-mark {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  color: var(--event-hue);
+  shape-rendering: crispEdges;
 }
 @keyframes wins-scroll {
   to {
