@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0e0e0e">
+  <meta name="description" content="Daniil Tkachev's public engineering projects, hackathon results and activity from Pavlodar, Kazakhstan.">
+  <title>Builder Deck · Daniil Tkachev</title>
+  <link rel="icon" type="image/png" href="<!--@favicon-->">
+  <link rel="apple-touch-icon" href="<!--@avatar-->">
+  <style><!--@fonts--><!--@styles--></style>
+</head>
+<body>
+<!--@sprites-->
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="wrap mast-inner">
+    <a class="brand" href="#overview"><img src="<!--@avatar-->" alt="">Builder Deck<span>· Daniil Tkachev ↗</span></a>
+    <nav id="socials" aria-label="Profiles"></nav>
+    <div class="head-tools"><span class="clock"><i></i><span id="clock"></span> ALMT</span><button class="theme" id="theme">Theme Admin <b>DEMO</b></button></div>
+  </div>
+</header>
+<main id="main" tabindex="-1">
+<div id="overview">
+  <section class="workspace">
+    <div class="wrap workspace-inner">
+      <div class="workspace-top"><span class="live-dot">Available for builds</span><span>Personal workspace <span class="slash">/</span> <span id="handle"></span></span></div>
+      <div class="intro">
+        <div class="identity">
+          <div class="kicker"><i></i> PROOF OF WORK HUB</div>
+          <h1>Hello, <em>Daniil.</em></h1>
+          <p id="bio"></p>
+          <p class="hero-copy">I build tools for city teams, bond issuers and universities. Explore the projects, code and results behind them.</p>
+          <button id="hero-search" class="search-launch"><span class="prompt-mark">❯</span><span>Search or run a <b>/command</b></span><kbd>Ctrl + K</kbd></button>
+          <nav class="bookmarks" aria-label="Quick bookmarks"><a href="#projects">Projects ↓</a><a data-url="github">GitHub ↗</a><a data-url="lichess">Lichess ↗</a></nav>
+          <div class="ai-tools"><span>Ask AI about me</span><button data-ai="claude">Claude ↗</button><button data-ai="chatgpt">ChatGPT ↗</button><button data-copy="dossier" title="Copy AI dossier" aria-label="Copy AI dossier"><span data-i="copy"></span></button></div>
+        </div>
+        <div class="board">
+          <div class="board-bar"><span><i></i> Achievement board</span><button data-view="bomb" aria-label="Open sticker playground">↗</button></div>
+          <div class="board-field"><!--@contours--><div class="sticker-area" id="hero-stickers" aria-label="Draggable achievement stickers"></div></div>
+          <div class="board-foot"><span>DRAG TO MOVE</span><span>R TO ROTATE</span></div>
+        </div>
+      </div>
+      <div class="hero-bottom"><nav class="dock" data-dock aria-label="Deck modes"></nav><a class="scroll" href="#wins"><b>↓</b> Scroll for proof of work, projects &amp; feed</a></div>
+    </div>
+  </section>
+  <section id="wins" aria-label="Recent wins"><div class="wrap ticker-line"><div class="ticker-label"><i></i>Recent wins</div><div class="ticker"><div class="ticker-track" id="ticker"></div></div><button id="pause" class="square" aria-label="Pause ticker">Ⅱ</button></div></section>
+  <div class="wrap hub">
+    <section id="projects">
+      <div class="section-head"><div><div class="kicker"><i></i> PROJECT INDEX</div><h2>Shipped MVPs <em>&amp; open source.</em></h2></div><a class="text-link" data-url="repos">All repositories ↗</a></div>
+      <div id="project-grid"></div>
+    </section>
+    <div class="ledger">
+      <section id="activity"><div class="section-head"><div><div class="kicker"><i></i> CURATED LOG</div><h2>News <em>&amp; activity.</em></h2></div></div>
+        <div class="filters" id="filters" aria-label="Filter activity"></div><div id="stream" aria-live="polite"></div>
+        <details class="status"><summary>Feed source status</summary><p><strong>GitHub</strong> · Selected public repos and commits, saved as a manual snapshot.</p><p><strong>Milestones</strong> · Manually added results with project or profile links.</p><p><strong>Instagram &amp; LinkedIn</strong> · Direct profile links. This edition runs without automatic imports.</p></details>
+      </section>
+      <aside class="snapshot"><div class="kicker"><i></i> BUILDER PROFILE</div><h2>Proof of work <em>snapshot.</em></h2>
+        <div class="stat-grid" id="stats"></div><p class="school">Toraighyrov University <span>Pavlodar, Kazakhstan</span></p>
+        <h3>Core stack</h3><div class="stack" id="stack"></div><h3>Credential IDs</h3><div id="ids"></div>
+      </aside>
+    </div>
+  </div>
+</div>
+<section id="shelf" class="wrap altview" hidden><nav class="dock" data-dock aria-label="Deck modes"></nav><div class="kicker"><i></i> CREDENTIALS &amp; MILESTONES</div><h1>Trophy <em>shelf.</em></h1><div id="trophies"></div></section>
+<section id="bomb" class="wrap altview" hidden><nav class="dock" data-dock aria-label="Deck modes"></nav><div class="kicker"><i></i> STICKER COLLECTION</div><h1>Sticker<em>bomb.</em></h1><div class="bomb-tools"><p>Drag to move. Double-click or press R to rotate. Use arrow keys to nudge.</p><button id="reset" class="secondary">Reset layout</button></div><div id="canvas" class="sticker-area"></div></section>
+</main>
+<footer><div class="wrap footer-inner"><div><a class="brand" href="#overview"><img src="<!--@avatar-->" alt="">Builder Deck</a><p>Personal command center &amp; proof-of-work hub. Built by Daniil Tkachev in Pavlodar, Kazakhstan.</p><span class="live-dot">Available for Full-Stack, AI &amp; Web3 Builds</span></div>
+<section><h3>Projects &amp; Tracks</h3><div id="footer-projects"></div><a data-url="repos">Open-source repos ↗</a><button data-view="shelf">Trophy Shelf</button></section>
+<section><h3>Proof of Work</h3><a data-url="astana">Astana Hub ↗</a><a data-url="superteam">Superteam Earn ↗</a><a href="#shelf">Credentials</a><a href="#activity">Activity changelog</a></section>
+<section><h3>Socials &amp; Contact</h3><a data-url="github">GitHub ↗</a><a data-url="linkedin">LinkedIn ↗</a><a data-url="instagram">Instagram ↗</a><a data-url="x">X / Twitter ↗</a><button id="email">Copy email <span data-i="copy"></span></button></section></div></footer>
+<dialog id="dialog" aria-labelledby="dialog-title"><div class="dialog-head"><h2 id="dialog-title"></h2><button class="square" id="close" aria-label="Close dialog">×</button></div><div id="dialog-content"></div></dialog><div id="toast" role="status"></div>
+<template id="project-art-sol"><!--@art--></template><template id="project-art-city"><!--@city--></template><template id="project-art-tou"><!--@tou--></template>
+<script>(()=>{'use strict';<!--@script-->})();</script><script type="text/plain" id="font-licenses"><!--@licenses--></script></body></html>

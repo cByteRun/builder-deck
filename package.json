@@ -1,12 +1,8 @@
 {
   "name": "builder-deck",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "type": "module",
-  "scripts": {
-    "build": "node scripts/build.mjs"
-  },
-  "engines": {
-    "node": ">=20"
-  }
+  "engines": {"node": "24.x"},
+  "scripts": {"build": "node scripts/build.mjs", "dev": "node scripts/dev.mjs"}
 }
