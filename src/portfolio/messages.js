@@ -83,7 +83,7 @@ export const messages = {
   "On-Chain Proof": ["Запись в блокчейне", "Блокчейн жазбасы"],
   "AI-native urban & data platform": ["Городская платформа данных и ИИ", "AI негізіндегі қалалық деректер платформасы"],
   "Top 1 Visualization": ["1-е место по визуализации", "Деректерді көрнекілеуден 1-орын"],
-  "AI Fest (Toraighyrov University)": ["AI Fest (университет Торайгырова)", "AI Fest (Торайғыров университеті)"],
+  "AI & Digital Bridge (Toraighyrov University)": ["AI & Digital Bridge (университет Торайгырова)", "AI & Digital Bridge (Торайғыров университеті)"],
   "A TypeScript workspace for city feedback in Pavlodar. Explore public reports in Kazakh and Russian, trace priority scores to their sources, and see which department owns each case.": ["Платформа на TypeScript для обращений жителей Павлодара. Показывает сообщения на казахском и русском, основания для назначения приоритета и ответственный отдел по каждому обращению.", "Павлодар тұрғындарының өтініштеріне арналған TypeScript платформасы. Қазақша және орысша хабарламаларды, басымдықтың негізін және әр өтінішке жауапты бөлімді көрсетеді."],
   "Public reports": ["Обращения жителей", "Тұрғындар өтініштері"],
   "RU / KZ analysis": ["Анализ RU / KZ", "RU / KZ талдауы"],
@@ -209,7 +209,7 @@ export const messages = {
   "Regional Contestant": ["Участник регионального этапа", "Аймақтық кезең қатысушысы"],
   "19 Cities": ["19 городов", "19 қала"],
   "2,415 builders gathered at Astana EXPO.": ["2 415 участников собрались на площадке Astana EXPO.", "Astana EXPO алаңына 2 415 қатысушы жиналды."],
-  "CityCom took first place at AI Fest.": ["CityCom занял первое место на AI Fest.", "CityCom AI Fest фестивалінде бірінші орын алды."],
+  "CityCom placed first in Data Visualization at AI & Digital Bridge, held at Toraighyrov University.": ["CityCom занял первое место в направлении визуализации данных на AI & Digital Bridge в Торайгыров университете.", "CityCom Торайғыров университетінде өткен AI & Digital Bridge іс-шарасында деректерді көрнекілеу бағыты бойынша бірінші орын алды."],
   "Recorda · Tokenized bond servicing on Solana devnet.": ["Recorda · Обслуживание токенизированных облигаций в Solana devnet.", "Recorda · Solana devnet желісінде токенделген облигацияларға қызмет көрсету."],
   "Builder bounties on Superteam Earn.": ["Награды за выполненные задания на Superteam Earn.", "Superteam Earn платформасындағы тапсырмалардың сыйақылары."],
   "A nationwide builder season with Astana Hub and BAITC.": ["Национальный хакатон с Astana Hub и BAITC.", "Astana Hub және BAITC қатысқан ұлттық хакатон."],
@@ -222,5 +222,5 @@ export const messages = {
   "19 cities synced.": ["19 городов на связи.", "19 қала байланыста."],
   "Stage two in orbit.": ["Второй этап на орбите.", "Екінші кезең орбитада."],
   "Balloon earned!": ["Шарик получен!", "Шар алынды!"],
-  "Top 1 Visualization · AI Fest (Toraighyrov University)": ["1-е место в визуализации · AI Fest (Торайгыров университет)", "Визуализация бойынша 1-орын · AI Fest (Торайғыров университеті)"]
+  "Top 1 Visualization · AI & Digital Bridge (Toraighyrov University)": ["1-е место в визуализации · AI & Digital Bridge (Торайгыров университет)", "Визуализация бойынша 1-орын · AI & Digital Bridge (Торайғыров университеті)"]
 };

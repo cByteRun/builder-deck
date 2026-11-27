@@ -9,8 +9,8 @@ export const trophies = [
     identity: "https://hackalem.ai/logo.svg",
   },
   {
-    id: "city", name: "AI Fest · CityCom", result: "1st Place",
-    milestone: "1st place", detail: "CityCom took first place at AI Fest.",
+    id: "city", name: "AI & Digital Bridge · CityCom", result: "1st Place",
+    milestone: "1st place", detail: "CityCom placed first in Data Visualization at AI & Digital Bridge, held at Toraighyrov University.",
     color: "#64c9a5", pet: "Layer owl", reaction: "wingbeat", phrase: "City layers aligned.",
     identity: "https://github.com/cByteRun/city-com/blob/main/app/icon.svg",
   },

@@ -182,7 +182,7 @@ export const products = [
     name: "city-com",
     tab: "city-com",
     category: "AI-native urban & data platform",
-    badge: "Top 1 Visualization · AI Fest (Toraighyrov University)",
+    badge: "Top 1 Visualization · AI & Digital Bridge (Toraighyrov University)",
     summary:
       "A TypeScript workspace for city feedback in Pavlodar. Explore public reports in Kazakh and Russian, trace priority scores to their sources, and see which department owns each case.",
     stack: ["Next.js", "TypeScript", "Recharts", "SQLite"],
@@ -258,10 +258,10 @@ export const platforms = [
 
 export const achievements = [
   {
-    title: "AI Fest · city-com",
+    title: "AI & Digital Bridge · city-com",
     category: "Wins",
     platform: "astana",
-    label: "AI Fest",
+    label: "AI & Digital Bridge",
     metric: "Top 1 visualization",
     summary:
       "Data visualization track at Toraighyrov University. Explore the project repository.",

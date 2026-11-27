@@ -67,7 +67,7 @@
 | Проект | Задача | Стек | Что можно проверить |
 | --- | --- | --- | --- |
 | [Recorda](https://github.com/cByteRun/recorda-solana) | Обслуживание токенизированных облигаций: реестр держателей на дату фиксации, купоны, голосование и погашение. | Solana, Anchor / Rust, Token-2022, TypeScript, React | Демонстрация в Solana devnet; 4-е место в треке Superteam KZ × KASE. [Стенд](https://recorda-solana.vercel.app/) · [Операции](https://github.com/cByteRun/recorda-solana/blob/main/docs/BONDOPS-OPERATIONS.md) |
-| [city-com](https://github.com/cByteRun/city-com) | Разбор городских обращений на русском и казахском с привязкой к источнику, приоритету и ответственному отделу. | Next.js, TypeScript, Recharts, SQLite | 1-е место в направлении визуализации на AI Fest. Проект можно пройти по опубликованному сценарию. [Сценарий демонстрации](https://github.com/cByteRun/city-com#сценарий-демонстрации) |
+| [city-com](https://github.com/cByteRun/city-com) | Разбор городских обращений на русском и казахском с привязкой к источнику, приоритету и ответственному отделу. | Next.js, TypeScript, Recharts, SQLite | 1-е место в направлении визуализации данных на AI & Digital Bridge в Торайгыров университете. Проект можно пройти по опубликованному сценарию. [Сценарий демонстрации](https://github.com/cByteRun/city-com#сценарий-демонстрации) |
 | [Wooppay Wallet](https://github.com/cByteRun/wooppay-wallet-web) | Веб-концепт кошелька с локализованными страницами, структурированными данными и правилами индексации. | Next.js App Router, TypeScript, SEO | На стенде доступны публичные страницы концепта. В репозитории описан локальный запуск. [Стенд](https://wooppay-wallet-web.vercel.app/) |
 
 <a id="ai"></a>
